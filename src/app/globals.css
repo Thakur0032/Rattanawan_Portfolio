@@ -7,7 +7,7 @@
   --secondary: #849386;
   --accent: #334155;
   --muted: #1E293B;
-  --muted-foreground: #94A3B8;
+  --muted-foreground: #E2E8F0; /* Much brighter slate (Slate 200) for better readability */
   --card: rgba(255, 255, 255, 0.05);
 }
 

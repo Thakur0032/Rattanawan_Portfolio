@@ -77,7 +77,7 @@ export default function Testimonials() {
                 ))}
               </div>
               
-              <p className="text-muted leading-relaxed mb-8 flex-grow">
+              <p className="text-muted-foreground leading-relaxed mb-8 flex-grow">
                 "{testimonial.content}"
               </p>
               
@@ -88,7 +88,7 @@ export default function Testimonials() {
                 </div>
                 <div>
                   <h4 className="font-heading font-bold text-white text-sm">{testimonial.name}</h4>
-                  <p className="text-muted text-xs">{testimonial.role}</p>
+                  <p className="text-muted-foreground text-xs">{testimonial.role}</p>
                 </div>
               </div>
             </div>

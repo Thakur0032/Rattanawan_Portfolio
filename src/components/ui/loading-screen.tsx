@@ -47,7 +47,7 @@ export default function LoadingScreen() {
             </span>
             <div className="w-px h-8 bg-white/20" />
             <motion.span 
-              className="font-mono text-xl text-muted"
+              className="font-mono text-xl text-muted-foreground"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
@@ -56,7 +56,7 @@ export default function LoadingScreen() {
           </div>
           
           <motion.div 
-            className="absolute bottom-12 text-sm font-medium tracking-widest uppercase text-muted/50"
+            className="absolute bottom-12 text-sm font-medium tracking-widest uppercase text-muted-foreground/50"
             animate={{ opacity: [0.3, 1, 0.3] }}
             transition={{ repeat: Infinity, duration: 2 }}
           >

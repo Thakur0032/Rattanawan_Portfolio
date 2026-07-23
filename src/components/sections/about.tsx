@@ -77,7 +77,7 @@ export default function About() {
               {skills.map((skill, idx) => (
                 <span 
                   key={idx}
-                  className="px-3 py-1.5 text-xs font-medium bg-primary/5 border border-secondary/30 rounded-full text-foreground/80 hover:bg-secondary/20 hover:text-secondary-foreground hover:border-secondary/50 transition-all cursor-default"
+                  className="px-3 py-1.5 text-xs font-medium bg-primary/5 border border-secondary/30 rounded-full text-foreground/90 hover:bg-secondary/20 hover:text-secondary-foreground hover:border-secondary/50 transition-all cursor-default"
                 >
                   {skill}
                 </span>

@@ -84,7 +84,7 @@ export default function Experience() {
                         </h3>
                         <h4 className="text-muted-foreground font-medium mb-4">{exp.company}</h4>
                         
-                        <p className="text-muted-foreground/80 text-sm leading-relaxed mb-6">
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                           {exp.description}
                         </p>
                         
@@ -92,7 +92,7 @@ export default function Experience() {
                           {exp.tags.map((tag, tagIdx) => (
                             <span 
                               key={tagIdx}
-                              className="px-2.5 py-1 text-xs font-medium bg-primary/5 border border-secondary/30 rounded-md text-foreground/70"
+                              className="px-2.5 py-1 text-xs font-medium bg-primary/5 border border-secondary/30 rounded-md text-foreground/90"
                             >
                               {tag}
                             </span>

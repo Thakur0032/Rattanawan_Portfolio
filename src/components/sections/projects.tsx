@@ -118,8 +118,8 @@ function ProjectCard({ project, idx }: any) {
           {project.title}
         </h3>
         
-        <div className="glass p-6 md:p-8 rounded-2xl border-white/5 mb-6 text-muted leading-relaxed shadow-xl relative z-20 md:-ml-12 lg:-ml-24 xl:-ml-32">
-          {project.description}
+        <div className="glass p-6 md:p-8 rounded-2xl border-white/5 mb-6 text-muted-foreground leading-relaxed shadow-xl relative z-20 md:-ml-12 lg:-ml-24 xl:-ml-32">
+          <p>{project.description}</p>
         </div>
         
         <div className="flex flex-wrap gap-3 mb-8">
@@ -130,15 +130,24 @@ function ProjectCard({ project, idx }: any) {
           ))}
         </div>
         
-        <div className="flex items-center gap-6">
-          <a href={project.links.github} className="text-muted hover:text-primary transition-colors flex items-center gap-2 font-medium">
-            <FiGithub size={20} />
-            <span>Code</span>
-          </a>
-          <a href={project.links.demo} className="text-muted hover:text-primary transition-colors flex items-center gap-2 font-medium">
-            <ExternalLink size={20} />
-            <span>Live Demo</span>
-          </a>
+        <div className="mt-8 flex gap-6 relative z-20">
+          {project.links.github && (
+            <div className="relative group/link cursor-pointer" onMouseEnter={() => setHoveredLink(`${idx}-github`)} onMouseLeave={() => setHoveredLink(null)}>
+              <div className="absolute inset-0 bg-primary/20 blur-md rounded-full opacity-0 group-hover/link:opacity-100 transition-opacity" />
+              <a href={project.links.github} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 font-medium">
+                <Github size={18} /> Code
+              </a>
+            </div>
+          )}
+          {project.links.demo && (
+            <div className="relative group/link cursor-pointer" onMouseEnter={() => setHoveredLink(`${idx}-demo`)} onMouseLeave={() => setHoveredLink(null)}>
+              <div className="absolute inset-0 bg-primary/20 blur-md rounded-full opacity-0 group-hover/link:opacity-100 transition-opacity" />
+              <a href={project.links.demo} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 font-medium">
+                <ExternalLink size={20} />
+                <span>Live Demo</span>
+              </a>
+            </div>
+          )}
         </div>
       </motion.div>
 
