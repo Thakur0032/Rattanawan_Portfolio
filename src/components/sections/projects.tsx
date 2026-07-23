@@ -130,24 +130,15 @@ function ProjectCard({ project, idx }: any) {
           ))}
         </div>
         
-        <div className="mt-8 flex gap-6 relative z-20">
-          {project.links.github && (
-            <div className="relative group/link cursor-pointer" onMouseEnter={() => setHoveredLink(`${idx}-github`)} onMouseLeave={() => setHoveredLink(null)}>
-              <div className="absolute inset-0 bg-primary/20 blur-md rounded-full opacity-0 group-hover/link:opacity-100 transition-opacity" />
-              <a href={project.links.github} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 font-medium">
-                <Github size={18} /> Code
-              </a>
-            </div>
-          )}
-          {project.links.demo && (
-            <div className="relative group/link cursor-pointer" onMouseEnter={() => setHoveredLink(`${idx}-demo`)} onMouseLeave={() => setHoveredLink(null)}>
-              <div className="absolute inset-0 bg-primary/20 blur-md rounded-full opacity-0 group-hover/link:opacity-100 transition-opacity" />
-              <a href={project.links.demo} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 font-medium">
-                <ExternalLink size={20} />
-                <span>Live Demo</span>
-              </a>
-            </div>
-          )}
+        <div className="flex items-center gap-6">
+          <a href={project.links.github} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 font-medium">
+            <FiGithub size={20} />
+            <span>Code</span>
+          </a>
+          <a href={project.links.demo} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 font-medium">
+            <ExternalLink size={20} />
+            <span>Live Demo</span>
+          </a>
         </div>
       </motion.div>
 
