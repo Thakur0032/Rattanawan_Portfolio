@@ -10,20 +10,20 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-secondary/20 bg-background/50 pt-16 pb-8 overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-secondary/50 to-transparent" />
+    <footer className="relative border-t border-secondary/20 bg-background/50 pt-16 pb-8 overflow-hidden mt-20">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           
-          <div className="md:col-span-2">
+          <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <span className="font-heading text-2xl font-bold tracking-tighter text-foreground">
                 Rattanawan James<span className="text-primary">.</span>
               </span>
             </Link>
             <p className="text-muted-foreground max-w-sm mb-6">
-              Self-Love Awakening Hypnotherapist. Break Inner Patterns, Heal & Transform Online (Worldwide).
+              Self-Love Awakening Hypnotherapist & Holistic Wellness Coach. Break Inner Patterns, Heal & Transform Online (Worldwide).
             </p>
             <div className="flex space-x-4">
               <SocialLink href="https://www.linkedin.com/in/rattanawan-james-203658340/" icon={<FiLinkedin size={20} />} />
@@ -33,22 +33,31 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold text-foreground mb-4">Quick Links</h3>
+            <h3 className="font-heading font-semibold text-foreground mb-4 text-primary">Quick Links</h3>
             <ul className="space-y-3">
-              <FooterLink href="#about">About</FooterLink>
-              <FooterLink href="#services">Therapies</FooterLink>
-              <FooterLink href="#experience">Experience</FooterLink>
-              <FooterLink href="#contact">Contact</FooterLink>
+              <FooterLink href="/">Home</FooterLink>
+              <FooterLink href="/about">About Me</FooterLink>
+              <FooterLink href="/programs/10-day-healing">10-Day Healing Program</FooterLink>
+              <FooterLink href="/#contact">Contact</FooterLink>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold text-foreground mb-4">Therapies</h3>
+            <h3 className="font-heading font-semibold text-foreground mb-4 text-primary">Therapies & Support</h3>
             <ul className="space-y-3">
-              <FooterLink href="#services">Gut-Directed</FooterLink>
-              <FooterLink href="#services">Self-Love Awakening</FooterLink>
-              <FooterLink href="#services">Anxiety Relief</FooterLink>
-              <FooterLink href="#services">Subconscious Healing</FooterLink>
+              <FooterLink href="/therapies/hypnotherapy">Hypnotherapy</FooterLink>
+              <FooterLink href="/therapies/spinal-synergy">Spinal Synergy</FooterLink>
+              <FooterLink href="/support/trauma-and-stress">Trauma & Stress Relief</FooterLink>
+              <FooterLink href="/coaching/mindset-and-purpose">Mindset & Purpose</FooterLink>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-heading font-semibold text-foreground mb-4 text-primary">Resources</h3>
+            <ul className="space-y-3">
+              <FooterLink href="/resources">Free Guides</FooterLink>
+              <FooterLink href="/blog">Wellness Blog</FooterLink>
+              <FooterLink href="/resources#mindfulness">Mindfulness Exercises</FooterLink>
             </ul>
           </div>
         </div>
@@ -64,7 +73,7 @@ export default function Footer() {
           >
             <span>Back to top</span>
             <div className="p-2 rounded-full bg-secondary/10 group-hover:bg-primary/20 transition-colors">
-              <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform" />
+              <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform text-primary" />
             </div>
           </button>
         </div>
@@ -89,7 +98,7 @@ function SocialLink({ href, icon }: { href: string; icon: React.ReactNode }) {
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <li>
-      <Link href={href} className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+      <Link href={href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
         {children}
       </Link>
     </li>

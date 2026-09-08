@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0F172A;
-  --foreground: #F8FAFC;
-  --primary: #D4AF37;
-  --secondary: #849386;
-  --accent: #334155;
-  --muted: #1E293B;
-  --muted-foreground: #E2E8F0; /* Much brighter slate (Slate 200) for better readability */
-  --card: rgba(255, 255, 255, 0.05);
+  --background: #051014; /* Very dark teal/slate */
+  --foreground: #F0F8F8; /* Soft cool white */
+  --primary: #50C8C6; /* Bright Tiffany Blue */
+  --secondary: #2D767A; /* Deep Tiffany Teal */
+  --accent: #1A5F63; /* Darker Teal */
+  --muted: #122A2D; /* Very dark muted teal */
+  --muted-foreground: #9BB7B8; /* Light teal-grey */
+  --card: rgba(80, 200, 198, 0.05); /* Tinted glass */
 }
 
 @theme inline {

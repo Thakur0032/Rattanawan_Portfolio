@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("");
-  const fullText = "Self-Love Awakening Hypnotherapist";
+  const fullText = "Holistic Wellness & Mind-Body Practitioner";
 
   useEffect(() => {
     let i = 0;
@@ -18,7 +18,7 @@ export default function Hero() {
       } else {
         clearInterval(typingInterval);
       }
-    }, 100);
+    }, 50);
 
     return () => clearInterval(typingInterval);
   }, []);
@@ -45,7 +45,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="inline-block px-4 py-2 rounded-full border border-secondary/30 bg-secondary/10 text-secondary-foreground font-medium text-sm mb-6 backdrop-blur-sm shadow-sm"
             >
-              Heal & Transform Online (Worldwide)
+              Transformational Healing & Wellness Support
             </motion.div>
             
             <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-foreground mb-4">
@@ -67,7 +67,7 @@ export default function Hero() {
             </div>
             
             <p className="text-lg text-foreground/70 max-w-xl mb-10 leading-relaxed font-sans">
-              Break Inner Patterns. Achieve self-acceptance and profound healing through tailored, gut-directed and mindset-shifting hypnotherapy sessions.
+              Experience deep relaxation, inner peace, and emotional balance. Through personalized one-on-one sessions, we journey together toward whole-person wellness, integrating holistic health strategies, stress management, and self-awareness for true personal transformation.
             </p>
             
             <div className="flex flex-wrap gap-4">
@@ -113,7 +113,7 @@ export default function Hero() {
                 className="absolute top-16 -left-12 glass-heavy px-6 py-4 rounded-2xl shadow-xl flex items-center gap-3"
               >
                 <div className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
-                <span className="font-semibold text-foreground text-sm tracking-wide">NLP Master</span>
+                <span className="font-semibold text-foreground text-sm tracking-wide">Holistic Healing</span>
               </motion.div>
 
               <motion.div 
@@ -122,7 +122,7 @@ export default function Hero() {
                 className="absolute bottom-24 -right-8 glass-heavy px-6 py-4 rounded-2xl shadow-xl flex items-center gap-3"
               >
                 <div className="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse" />
-                <span className="font-semibold text-foreground text-sm tracking-wide">Gut-Directed</span>
+                <span className="font-semibold text-foreground text-sm tracking-wide">Mind-Body Balance</span>
               </motion.div>
             </div>
           </motion.div>
