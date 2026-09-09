@@ -76,7 +76,7 @@ export default function Skills() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-heading font-bold text-white mb-6"
+            className="text-3xl md:text-5xl font-heading font-bold text-slate-900 mb-6"
           >
             My <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Arsenal</span>
           </motion.h2>
@@ -92,11 +92,11 @@ export default function Skills() {
             <motion.div 
               key={idx} 
               variants={itemVariants}
-              className="glass p-8 rounded-3xl border-white/5 relative group hover:border-white/10 transition-colors"
+              className="glass p-8 rounded-3xl border-slate-100 relative group hover:border-slate-200 transition-colors"
             >
               <div className={cn("absolute top-0 left-0 w-full h-1 rounded-t-3xl bg-gradient-to-r opacity-50 group-hover:opacity-100 transition-opacity", category.color)} />
               
-              <h3 className="text-xl font-heading font-bold text-white mb-6 flex items-center gap-3">
+              <h3 className="text-xl font-heading font-bold text-slate-900 mb-6 flex items-center gap-3">
                 <span className={cn("w-2 h-2 rounded-full bg-gradient-to-r", category.color)} />
                 {category.title}
               </h3>
@@ -105,7 +105,7 @@ export default function Skills() {
                 {category.skills.map((skill, sIdx) => (
                   <span 
                     key={sIdx}
-                    className="px-3 py-1.5 text-sm font-medium bg-white/5 border border-white/5 rounded-lg text-muted-foreground group-hover:text-white/90 hover:bg-white/10 transition-all cursor-default"
+                    className="px-3 py-1.5 text-sm font-medium bg-slate-50 border border-slate-100 rounded-lg text-muted-foreground group-hover:text-slate-900/90 hover:bg-slate-100 transition-all cursor-default"
                   >
                     {skill}
                   </span>

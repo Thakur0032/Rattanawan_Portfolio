@@ -117,7 +117,7 @@ export default function Navbar() {
             
             <Link 
               href="/#contact"
-              className="px-5 py-2.5 rounded-full bg-white/5 border border-secondary/30 text-foreground font-medium hover:bg-secondary/20 hover:border-secondary transition-all shadow-sm whitespace-nowrap"
+              className="px-5 py-2.5 rounded-full bg-slate-50 border border-secondary/30 text-foreground font-medium hover:bg-slate-100 hover:border-secondary transition-all shadow-sm whitespace-nowrap"
             >
               Let's Talk
             </Link>

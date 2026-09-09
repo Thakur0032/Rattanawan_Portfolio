@@ -76,7 +76,7 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-3xl mx-auto glass bg-primary/5 p-8 md:p-12 rounded-3xl border-secondary/20 relative overflow-hidden shadow-lg"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 relative z-10">
             
@@ -136,7 +136,7 @@ export default function Contact() {
               disabled={isSubmitting}
               className="w-full group relative px-8 py-4 bg-primary text-background font-bold rounded-xl overflow-hidden flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] disabled:opacity-70 disabled:hover:scale-100 shadow-md"
             >
-              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="relative z-10 transition-colors duration-300">
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </span>

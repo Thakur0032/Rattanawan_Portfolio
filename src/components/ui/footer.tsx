@@ -72,7 +72,7 @@ export default function Footer() {
             className="group flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <span>Back to top</span>
-            <div className="p-2 rounded-full bg-secondary/10 group-hover:bg-primary/20 transition-colors">
+            <div className="p-2 rounded-full bg-slate-50 group-hover:bg-primary/20 transition-colors">
               <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform text-primary" />
             </div>
           </button>

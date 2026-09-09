@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #051014; /* Very dark teal/slate */
-  --foreground: #F0F8F8; /* Soft cool white */
-  --primary: #50C8C6; /* Bright Tiffany Blue */
-  --secondary: #2D767A; /* Deep Tiffany Teal */
-  --accent: #1A5F63; /* Darker Teal */
-  --muted: #122A2D; /* Very dark muted teal */
-  --muted-foreground: #9BB7B8; /* Light teal-grey */
-  --card: rgba(80, 200, 198, 0.05); /* Tinted glass */
+  --background: #FCFDFD; /* Pure airy white/cream */
+  --foreground: #0F172A; /* Slate 900 for crisp text */
+  --primary: #0ABAB5; /* True Tiffany Blue */
+  --secondary: #E2E8F0; /* Light slate for borders/subtle backgrounds */
+  --accent: #F8FAFC; /* Slate 50 for alternate sections */
+  --muted: #F1F5F9; /* Slate 100 */
+  --muted-foreground: #475569; /* Slate 600 for highly readable body text */
+  --card: #FFFFFF; /* Pure white cards */
 }
 
 @theme inline {
@@ -44,32 +44,29 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: var(--secondary);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary);
+  background: var(--primary);
 }
 
-/* Base utility for elevated glassmorphism */
+/* Premium Light Corporate/Business Cards */
 .glass {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255,255,255,0.08);
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px -4px rgba(10, 186, 181, 0.05), 0 2px 8px -2px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-heavy {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255,255,255,0.1);
+  background: #FFFFFF;
+  border: 1px solid rgba(10, 186, 181, 0.1);
+  box-shadow: 0 12px 48px -12px rgba(10, 186, 181, 0.15), 0 4px 16px -4px rgba(0, 0, 0, 0.03);
 }
 
 .text-gradient {
-  background: linear-gradient(100deg, #C9A96E 0%, #E3D0A3 50%, #6A7B6C 100%);
+  background: linear-gradient(135deg, #0ABAB5 0%, #1A5F63 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -83,6 +80,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   pointer-events: none;
   z-index: 40;
-  opacity: 0.04;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }

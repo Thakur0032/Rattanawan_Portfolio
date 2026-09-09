@@ -63,7 +63,7 @@ export default function Services() {
 
   return (
     <section id="services" className="py-24 relative overflow-hidden" ref={containerRef}>
-      <div className="absolute top-1/2 left-0 w-full h-[500px] bg-secondary/10 rounded-[100%] blur-[120px] -translate-y-1/2 pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-full h-[500px] bg-slate-50 rounded-[100%] blur-[120px] -translate-y-1/2 pointer-events-none" />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         

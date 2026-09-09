@@ -26,7 +26,7 @@ export default function MindsetAndPurposePage() {
         {/* Content Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
           
-          <div className="glass p-8 md:p-12 rounded-[32px] border-white/5 relative shadow-2xl">
+          <div className="glass p-8 md:p-12 rounded-[32px] border-slate-100 relative shadow-2xl">
             <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Confidence & Mindset Transformation</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               True <strong>personal empowerment</strong> begins with <strong>confidence building</strong>. I offer specialized <strong>mindset coaching</strong> to help you develop <strong>self-confidence</strong>, <strong>self-esteem</strong>, <strong>self-worth</strong>, and deep <strong>self-belief</strong>. We will work together to <strong>overcome self-doubt</strong> and cultivate an unshakeable <strong>inner confidence</strong>.
@@ -41,7 +41,7 @@ export default function MindsetAndPurposePage() {
           </div>
 
           <div className="space-y-6">
-            <div className="glass-heavy p-8 rounded-[32px] border-white/5">
+            <div className="glass-heavy p-8 rounded-[32px] border-slate-100">
               <h3 className="text-xl font-heading font-bold text-foreground mb-4">Professional & Executive Excellence</h3>
               <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
                 Beyond <strong>personal growth</strong> and <strong>self-development</strong>, I provide high-level <strong>success coaching</strong> and <strong>motivation coaching</strong> designed for leaders.
@@ -55,11 +55,11 @@ export default function MindsetAndPurposePage() {
               </ul>
             </div>
 
-            <div className="glass p-8 rounded-[32px] border-white/5">
+            <div className="glass p-8 rounded-[32px] border-slate-100">
               <h3 className="text-xl font-heading font-bold text-foreground mb-4">Coaching Pathways</h3>
               <div className="flex flex-wrap gap-2">
                 {["One on One Mindset Coaching", "Life Coaching", "Wellness Coaching", "Empowerment Coaching", "Holistic Mentoring", "Self-Awareness", "Self-Discovery", "Discover Your Potential", "Unlock Your Potential", "Purpose-Driven Living"].map((tag) => (
-                  <span key={tag} className="px-3 py-1.5 bg-secondary/20 text-foreground/80 text-sm rounded-lg border border-secondary/20">
+                  <span key={tag} className="px-3 py-1.5 bg-slate-100 text-foreground/80 text-sm rounded-lg border border-secondary/20">
                     {tag}
                   </span>
                 ))}

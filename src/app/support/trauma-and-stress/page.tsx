@@ -26,7 +26,7 @@ export default function TraumaAndStressPage() {
         {/* Content Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
           
-          <div className="glass p-8 md:p-12 rounded-[32px] border-white/5 relative shadow-2xl">
+          <div className="glass p-8 md:p-12 rounded-[32px] border-slate-100 relative shadow-2xl">
             <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Healing & Resilience</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               When navigating difficult times, finding a path to <strong>emotional healing</strong> and <strong>emotional restoration</strong> is vital. I offer <strong>trauma support</strong>, <strong>trauma recovery support</strong>, and <strong>holistic trauma support</strong> through a <strong>trauma-informed support</strong> framework. My goal is to facilitate <strong>mind-body healing</strong>, helping you with <strong>healing after trauma</strong>, <strong>healing from emotional pain</strong>, and <strong>healing after adversity</strong>.
@@ -41,7 +41,7 @@ export default function TraumaAndStressPage() {
           </div>
 
           <div className="space-y-6">
-            <div className="glass-heavy p-8 rounded-[32px] border-white/5">
+            <div className="glass-heavy p-8 rounded-[32px] border-slate-100">
               <h3 className="text-xl font-heading font-bold text-foreground mb-4">Finding Inner Peace</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary" /> <strong>Nervous System:</strong> Nervous system regulation & relaxation</li>
@@ -52,11 +52,11 @@ export default function TraumaAndStressPage() {
               </ul>
             </div>
 
-            <div className="glass p-8 rounded-[32px] border-white/5">
+            <div className="glass p-8 rounded-[32px] border-slate-100">
               <h3 className="text-xl font-heading font-bold text-foreground mb-4">Outcomes</h3>
               <div className="flex flex-wrap gap-2">
                 {["Inner Peace", "Inner Calm", "Inner Strength", "Emotional Resilience", "Resilience Building", "Stress Coping Strategies", "Holistic Emotional Wellness", "Personalized Healing Sessions", "Gentle One-on-One Sessions", "Wellbeing Support"].map((tag) => (
-                  <span key={tag} className="px-3 py-1.5 bg-secondary/20 text-foreground/80 text-sm rounded-lg border border-secondary/20">
+                  <span key={tag} className="px-3 py-1.5 bg-slate-100 text-foreground/80 text-sm rounded-lg border border-secondary/20">
                     {tag}
                   </span>
                 ))}

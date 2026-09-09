@@ -32,7 +32,7 @@ export default function LoadingScreen() {
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-background"
         >
-          <div className="relative w-64 h-1 bg-white/10 rounded-full overflow-hidden mb-8">
+          <div className="relative w-64 h-1 bg-slate-100 rounded-full overflow-hidden mb-8">
             <motion.div
               className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-accent"
               initial={{ width: "0%" }}
@@ -42,7 +42,7 @@ export default function LoadingScreen() {
           </div>
           
           <div className="flex items-center gap-4">
-            <span className="font-heading text-4xl font-bold tracking-tighter text-white">
+            <span className="font-heading text-4xl font-bold tracking-tighter text-slate-900">
               MD<span className="text-primary">.</span>
             </span>
             <div className="w-px h-8 bg-white/20" />
