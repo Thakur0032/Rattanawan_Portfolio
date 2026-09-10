@@ -16,7 +16,7 @@ const services = [
     title: "Gut-Directed Hypnotherapy",
     description: "Alleviate anxiety and physical symptoms by calming the gut-brain connection.",
     icon: <Leaf size={24} />,
-    color: "group-hover:text-secondary group-hover:border-secondary/50"
+    color: "group-hover:text-primary group-hover:border-secondary/50"
   },
   {
     title: "Self-Love Awakening",
@@ -34,7 +34,7 @@ const services = [
     title: "Safe & Natural Relaxation",
     description: "Experience deep, natural relaxation in a secure and supportive environment.",
     icon: <Shield size={24} />,
-    color: "group-hover:text-secondary group-hover:border-secondary/50"
+    color: "group-hover:text-primary group-hover:border-secondary/50"
   },
   {
     title: "Worldwide Online Sessions",
@@ -52,7 +52,7 @@ const services = [
     title: "NLP Mastery",
     description: "Utilizing Neuro-Linguistic Programming techniques to accelerate your healing journey.",
     icon: <Sparkles size={24} />,
-    color: "group-hover:text-secondary group-hover:border-secondary/50"
+    color: "group-hover:text-primary group-hover:border-secondary/50"
   }
 ];
 
@@ -72,7 +72,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-secondary/20 text-secondary mb-4 shadow-sm"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-secondary/20 text-primary mb-4 shadow-sm"
           >
             <Sparkles size={16} />
             <span className="text-sm font-medium tracking-wider uppercase">Therapies</span>
@@ -103,7 +103,7 @@ export default function Services() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full transition-transform duration-500 group-hover:scale-150" />
                 
                 <div className={cn(
-                  "w-14 h-14 rounded-2xl bg-primary/5 border border-secondary/20 shadow-sm flex items-center justify-center text-secondary mb-8 transition-all duration-500 group-hover:scale-110 relative z-10",
+                  "w-14 h-14 rounded-2xl bg-primary/5 border border-secondary/20 shadow-sm flex items-center justify-center text-primary mb-8 transition-all duration-500 group-hover:scale-110 relative z-10",
                   service.color
                 )}>
                   {service.icon}

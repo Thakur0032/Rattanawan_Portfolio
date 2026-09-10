@@ -74,7 +74,7 @@ export default function Experience() {
                     {/* Content Container */}
                     <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${isEven ? 'md:pr-12 text-left md:text-right' : 'md:pl-12 text-left'}`}>
                       <div className="glass bg-primary/5 p-6 rounded-2xl border-secondary/20 hover:border-secondary/60 transition-all duration-300 group shadow-md hover:shadow-lg">
-                        <div className={`flex items-center gap-2 text-secondary font-medium mb-2 text-sm ${isEven ? 'md:justify-end' : 'justify-start'}`}>
+                        <div className={`flex items-center gap-2 text-primary font-medium mb-2 text-sm ${isEven ? 'md:justify-end' : 'justify-start'}`}>
                           <Calendar size={14} />
                           <span>{exp.period}</span>
                         </div>
