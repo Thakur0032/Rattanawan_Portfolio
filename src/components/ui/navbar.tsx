@@ -117,7 +117,7 @@ export default function Navbar() {
             
             <Link 
               href="/#contact"
-              className="px-5 py-2.5 rounded-full bg-slate-50 border border-secondary/30 text-foreground font-medium hover:bg-slate-100 hover:border-secondary transition-all shadow-sm whitespace-nowrap"
+              className="px-5 py-2.5 rounded-full bg-secondary border border-secondary/30 text-foreground font-medium hover:bg-accent hover:border-secondary transition-all shadow-sm whitespace-nowrap"
             >
               Let's Talk
             </Link>
@@ -174,7 +174,7 @@ export default function Navbar() {
             <Link 
               href="/#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-6 w-full px-5 py-3 rounded-xl bg-primary text-background font-medium text-center"
+              className="mt-6 w-full px-5 py-3 rounded-xl bg-primary text-[#020C1B] font-medium text-center"
             >
               Let's Talk
             </Link>

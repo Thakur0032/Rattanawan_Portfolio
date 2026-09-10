@@ -26,8 +26,8 @@ export default function BlogPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           
           {/* Post 1 */}
-          <Link href="#" className="glass p-6 rounded-[32px] border-slate-100 hover:border-primary/50 transition-all hover:-translate-y-2 group block">
-            <div className="aspect-[16/10] rounded-2xl bg-slate-100 mb-6 overflow-hidden relative">
+          <Link href="#" className="glass p-6 rounded-[32px] border-accent hover:border-primary/50 transition-all hover:-translate-y-2 group block">
+            <div className="aspect-[16/10] rounded-2xl bg-accent mb-6 overflow-hidden relative">
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000')] bg-cover bg-center grayscale-[50%] group-hover:grayscale-0 transition-all duration-500" />
             </div>
             <div className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Mind & Body</div>
@@ -40,8 +40,8 @@ export default function BlogPage() {
           </Link>
 
           {/* Post 2 */}
-          <Link href="#" className="glass p-6 rounded-[32px] border-slate-100 hover:border-primary/50 transition-all hover:-translate-y-2 group block">
-            <div className="aspect-[16/10] rounded-2xl bg-slate-100 mb-6 overflow-hidden relative">
+          <Link href="#" className="glass p-6 rounded-[32px] border-accent hover:border-primary/50 transition-all hover:-translate-y-2 group block">
+            <div className="aspect-[16/10] rounded-2xl bg-accent mb-6 overflow-hidden relative">
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000')] bg-cover bg-center grayscale-[50%] group-hover:grayscale-0 transition-all duration-500" />
             </div>
             <div className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Therapies</div>
@@ -54,8 +54,8 @@ export default function BlogPage() {
           </Link>
 
           {/* Post 3 */}
-          <Link href="#" className="glass p-6 rounded-[32px] border-slate-100 hover:border-primary/50 transition-all hover:-translate-y-2 group block">
-            <div className="aspect-[16/10] rounded-2xl bg-slate-100 mb-6 overflow-hidden relative">
+          <Link href="#" className="glass p-6 rounded-[32px] border-accent hover:border-primary/50 transition-all hover:-translate-y-2 group block">
+            <div className="aspect-[16/10] rounded-2xl bg-accent mb-6 overflow-hidden relative">
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000')] bg-cover bg-center grayscale-[50%] group-hover:grayscale-0 transition-all duration-500" />
             </div>
             <div className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Personal Growth</div>
@@ -69,7 +69,7 @@ export default function BlogPage() {
 
         </div>
 
-        <div className="max-w-4xl mx-auto mt-16 glass-heavy p-8 rounded-[32px] border-slate-100 text-center">
+        <div className="max-w-4xl mx-auto mt-16 glass-heavy p-8 rounded-[32px] border-accent text-center">
           <p className="text-muted-foreground text-sm">
             Also explore our <strong>positive mindset posts</strong>, <strong>trauma recovery support articles</strong>, and <strong>holistic lifestyle posts</strong>.
           </p>

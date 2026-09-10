@@ -26,7 +26,7 @@ export default function HypnotherapyPage() {
         {/* Content Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
           
-          <div className="glass p-8 md:p-12 rounded-[32px] border-slate-100 relative shadow-2xl">
+          <div className="glass p-8 md:p-12 rounded-[32px] border-accent relative shadow-2xl">
             <h2 className="text-2xl font-heading font-bold text-foreground mb-6">What is Holistic Hypnotherapy?</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               <strong>Hypnotherapy</strong> bridges the gap between your conscious desires and your <strong>subconscious mind</strong>. Through <strong>clinical hypnotherapy</strong> and <strong>therapeutic hypnosis</strong>, I guide you into a state of <strong>deep relaxation</strong> and heightened focus.
@@ -41,7 +41,7 @@ export default function HypnotherapyPage() {
           </div>
 
           <div className="space-y-6">
-            <div className="glass-heavy p-8 rounded-[32px] border-slate-100">
+            <div className="glass-heavy p-8 rounded-[32px] border-accent">
               <h3 className="text-xl font-heading font-bold text-foreground mb-4">Areas of Support</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary" /> <strong>Stress Relief</strong> & Emotional Balance</li>
@@ -52,11 +52,11 @@ export default function HypnotherapyPage() {
               </ul>
             </div>
 
-            <div className="glass p-8 rounded-[32px] border-slate-100">
+            <div className="glass p-8 rounded-[32px] border-accent">
               <h3 className="text-xl font-heading font-bold text-foreground mb-4">Wellness Tools</h3>
               <div className="flex flex-wrap gap-2">
                 {["Relaxation Techniques", "Mindfulness", "Wellness Support", "Resilience Building", "Emotional Resilience", "Personal Growth", "One-on-One Hypnotherapy"].map((tag) => (
-                  <span key={tag} className="px-3 py-1.5 bg-slate-100 text-foreground/80 text-sm rounded-lg border border-secondary/20">
+                  <span key={tag} className="px-3 py-1.5 bg-accent text-foreground/80 text-sm rounded-lg border border-secondary/20">
                     {tag}
                   </span>
                 ))}
@@ -68,7 +68,7 @@ export default function HypnotherapyPage() {
 
         {/* CTA */}
         <div className="max-w-4xl mx-auto text-center mt-12">
-          <a href="/#contact" className="inline-block px-8 py-4 bg-primary text-background font-bold rounded-full transition-transform hover:scale-105">
+          <a href="/#contact" className="inline-block px-8 py-4 bg-primary text-[#020C1B] font-bold rounded-full transition-transform hover:scale-105">
             Book a Hypnotherapy Session
           </a>
         </div>

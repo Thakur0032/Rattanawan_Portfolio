@@ -24,7 +24,7 @@ export default function SpinalSynergyPage() {
         </div>
 
         {/* Introduction */}
-        <div className="max-w-4xl mx-auto glass p-8 md:p-12 rounded-[32px] border-slate-100 shadow-2xl mb-16">
+        <div className="max-w-4xl mx-auto glass p-8 md:p-12 rounded-[32px] border-accent shadow-2xl mb-16">
           <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Mind Body Alignment</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
             <strong>Spinal Synergy</strong> is a unique approach to <strong>spinal alignment</strong> and <strong>gentle spinal alignment</strong>. It focuses on <strong>postural alignment</strong>, <strong>posture improvement</strong>, and <strong>natural posture support</strong>. This is not just physical adjustment; it is <strong>body alignment</strong> for complete <strong>whole body balance</strong> and <strong>physical balance</strong>.
@@ -34,7 +34,7 @@ export default function SpinalSynergyPage() {
           </p>
           <div className="flex flex-wrap gap-2 mt-8">
             {["Spinal Wellness", "Healthy Posture", "Back Wellness", "Neck Wellness", "Body Tension Relief", "Body Awareness", "Body Comfort", "Healthy Movement", "Natural Healing Support", "Whole Person Wellness", "Holistic Wellness", "Nervous System Support", "Deep Relaxation", "Stress Reduction", "One-on-one Spinal Wellness"].map((tag) => (
-              <span key={tag} className="px-3 py-1.5 bg-slate-100 text-foreground/80 text-sm rounded-lg border border-secondary/20">
+              <span key={tag} className="px-3 py-1.5 bg-accent text-foreground/80 text-sm rounded-lg border border-secondary/20">
                 {tag}
               </span>
             ))}
@@ -53,7 +53,7 @@ export default function SpinalSynergyPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             {/* Physical - Upper Body */}
-            <div className="glass-heavy p-8 rounded-[32px] border-slate-100">
+            <div className="glass-heavy p-8 rounded-[32px] border-accent">
               <h3 className="text-xl font-heading font-bold text-primary mb-6">Upper Body & Head</h3>
               <ul className="space-y-3 text-muted-foreground text-sm">
                 <li>• Headache, dizziness, feeling faint, pressure/heaviness in head</li>
@@ -69,7 +69,7 @@ export default function SpinalSynergyPage() {
             </div>
 
             {/* Physical - Torso & Lower */}
-            <div className="glass-heavy p-8 rounded-[32px] border-slate-100">
+            <div className="glass-heavy p-8 rounded-[32px] border-accent">
               <h3 className="text-xl font-heading font-bold text-primary mb-6">Torso & Lower Body</h3>
               <ul className="space-y-3 text-muted-foreground text-sm">
                 <li>• Indigestion, abdominal pain, and bloating</li>
@@ -85,7 +85,7 @@ export default function SpinalSynergyPage() {
             </div>
 
             {/* Emotional & Energetic */}
-            <div className="glass-heavy p-8 rounded-[32px] border-slate-100">
+            <div className="glass-heavy p-8 rounded-[32px] border-accent">
               <h3 className="text-xl font-heading font-bold text-primary mb-6">Emotional & Energetic</h3>
               <ul className="space-y-3 text-muted-foreground text-sm">
                 <li>• Brain fog, lack of mental/inner clarity, low energy</li>
@@ -109,7 +109,7 @@ export default function SpinalSynergyPage() {
 
         {/* CTA */}
         <div className="max-w-4xl mx-auto text-center mt-20">
-          <a href="/#contact" className="inline-block px-8 py-4 bg-primary text-background font-bold rounded-full transition-transform hover:scale-105">
+          <a href="/#contact" className="inline-block px-8 py-4 bg-primary text-[#020C1B] font-bold rounded-full transition-transform hover:scale-105">
             Book Personalized Spinal Sessions
           </a>
         </div>

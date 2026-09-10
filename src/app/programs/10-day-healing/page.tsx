@@ -26,7 +26,7 @@ export default function TenDayHealingPage() {
         {/* Content Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
           
-          <div className="glass p-8 md:p-12 rounded-[32px] border-slate-100 relative shadow-2xl">
+          <div className="glass p-8 md:p-12 rounded-[32px] border-accent relative shadow-2xl">
             <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Your Transformation Program</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Welcome to a <strong>transformational healing program</strong> unlike any other. This <strong>one-on-one healing program</strong> offers <strong>private healing sessions</strong> dedicated to your unique emotional and physical needs. As a <strong>customized wellness program</strong>, we focus on deep <strong>emotional healing</strong> and <strong>stress relief</strong>.
@@ -37,7 +37,7 @@ export default function TenDayHealingPage() {
           </div>
 
           <div className="space-y-6">
-            <div className="glass-heavy p-8 rounded-[32px] border-slate-100">
+            <div className="glass-heavy p-8 rounded-[32px] border-accent">
               <h3 className="text-xl font-heading font-bold text-foreground mb-4">Program Benefits</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary" /> Burnout recovery support & Stress management</li>
@@ -48,14 +48,14 @@ export default function TenDayHealingPage() {
               </ul>
             </div>
 
-            <div className="glass p-8 rounded-[32px] border-slate-100">
+            <div className="glass p-8 rounded-[32px] border-accent">
               <h3 className="text-xl font-heading font-bold text-foreground mb-4">Coaching Elements</h3>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1.5 bg-slate-100 text-foreground/80 text-sm rounded-lg border border-secondary/20">Wellness Coaching</span>
-                <span className="px-3 py-1.5 bg-slate-100 text-foreground/80 text-sm rounded-lg border border-secondary/20">Life Coaching</span>
-                <span className="px-3 py-1.5 bg-slate-100 text-foreground/80 text-sm rounded-lg border border-secondary/20">Mindset Coaching</span>
-                <span className="px-3 py-1.5 bg-slate-100 text-foreground/80 text-sm rounded-lg border border-secondary/20">Transformational Coaching</span>
-                <span className="px-3 py-1.5 bg-slate-100 text-foreground/80 text-sm rounded-lg border border-secondary/20">Personal Growth</span>
+                <span className="px-3 py-1.5 bg-accent text-foreground/80 text-sm rounded-lg border border-secondary/20">Wellness Coaching</span>
+                <span className="px-3 py-1.5 bg-accent text-foreground/80 text-sm rounded-lg border border-secondary/20">Life Coaching</span>
+                <span className="px-3 py-1.5 bg-accent text-foreground/80 text-sm rounded-lg border border-secondary/20">Mindset Coaching</span>
+                <span className="px-3 py-1.5 bg-accent text-foreground/80 text-sm rounded-lg border border-secondary/20">Transformational Coaching</span>
+                <span className="px-3 py-1.5 bg-accent text-foreground/80 text-sm rounded-lg border border-secondary/20">Personal Growth</span>
               </div>
             </div>
           </div>
@@ -63,14 +63,14 @@ export default function TenDayHealingPage() {
         </div>
 
         {/* Bottom Callout */}
-        <div className="max-w-4xl mx-auto glass-heavy p-10 rounded-[32px] text-center border-slate-100 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto glass-heavy p-10 rounded-[32px] text-center border-accent relative overflow-hidden">
           <div className="absolute inset-0 bg-primary/5" />
           <div className="relative z-10">
             <h2 className="text-2xl font-heading font-bold text-foreground mb-4">Embrace Whole Person Wellness</h2>
             <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
               This <strong>mind body healing program</strong> integrates <strong>natural healing</strong>, <strong>balanced living</strong>, and <strong>healthy lifestyle</strong> practices. With my <strong>one-on-one support</strong>, we will create a <strong>personalized wellness plan</strong> for your <strong>long-term well-being</strong>, <strong>sustainable wellness</strong>, and <strong>holistic personal development</strong>.
             </p>
-            <a href="/#contact" className="inline-block px-8 py-4 bg-primary text-background font-bold rounded-full transition-transform hover:scale-105">
+            <a href="/#contact" className="inline-block px-8 py-4 bg-primary text-[#020C1B] font-bold rounded-full transition-transform hover:scale-105">
               Start Your 10-Day Journey
             </a>
           </div>

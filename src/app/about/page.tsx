@@ -28,7 +28,7 @@ export default function AboutPage() {
           
           {/* Sidebar / Quick Facts */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="glass-heavy p-8 rounded-[32px] border-slate-100 relative overflow-hidden group">
+            <div className="glass-heavy p-8 rounded-[32px] border-accent relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
                 <h3 className="text-xl font-heading font-bold text-foreground mb-4">My Roles</h3>
@@ -43,11 +43,11 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="glass p-8 rounded-[32px] border-slate-100">
+            <div className="glass p-8 rounded-[32px] border-accent">
               <h3 className="text-xl font-heading font-bold text-foreground mb-4">Specialties</h3>
               <div className="flex flex-wrap gap-2">
                 {["Stress Management", "Relaxation", "Confidence Building", "Empowerment", "Personal Growth", "Self-Discovery"].map((tag) => (
-                  <span key={tag} className="px-3 py-1.5 bg-slate-100 text-foreground/80 text-sm rounded-lg border border-secondary/20">
+                  <span key={tag} className="px-3 py-1.5 bg-accent text-foreground/80 text-sm rounded-lg border border-secondary/20">
                     {tag}
                   </span>
                 ))}
@@ -56,10 +56,10 @@ export default function AboutPage() {
           </div>
 
           {/* Main Story */}
-          <div className="lg:col-span-8 glass p-8 md:p-12 rounded-[32px] border-slate-100 shadow-2xl relative">
+          <div className="lg:col-span-8 glass p-8 md:p-12 rounded-[32px] border-accent shadow-2xl relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
             
-            <div className="prose prose-lg prose-slate max-w-none">
+            <div className="prose prose-lg prose-invert max-w-none">
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Welcome to a space of profound transformation. As a <strong>mind-body practitioner</strong> and <strong>healing facilitator</strong>, my mission is to guide you through a deeply personalized wellness journey. I believe in a <strong>holistic approach</strong> to health, recognizing that true vitality comes from the intricate mind-body connection wellness.
               </p>

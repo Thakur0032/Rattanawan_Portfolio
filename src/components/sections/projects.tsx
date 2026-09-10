@@ -60,7 +60,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-heading font-bold text-slate-900 mb-6"
+            className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6"
           >
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Projects</span>
           </motion.h2>
@@ -92,7 +92,7 @@ function ProjectCard({ project, idx }: any) {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-full lg:w-3/5 relative group"
       >
-        <div className="relative rounded-2xl overflow-hidden glass border-slate-200 aspect-[4/3] sm:aspect-video md:aspect-[16/10]">
+        <div className="relative rounded-2xl overflow-hidden glass border-accent aspect-[4/3] sm:aspect-video md:aspect-[16/10]">
           <div className="absolute inset-0 bg-primary/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
@@ -114,18 +114,18 @@ function ProjectCard({ project, idx }: any) {
           Featured Project 0{idx + 1}
         </div>
         
-        <h3 className="text-3xl lg:text-4xl font-heading font-bold text-slate-900 mb-6">
+        <h3 className="text-3xl lg:text-4xl font-heading font-bold text-foreground mb-6">
           {project.title}
         </h3>
         
-        <div className="glass p-6 md:p-8 rounded-2xl border-slate-100 mb-6 text-muted-foreground leading-relaxed shadow-xl relative z-20 md:-ml-12 lg:-ml-24 xl:-ml-32">
+        <div className="glass p-6 md:p-8 rounded-2xl border-accent mb-6 text-muted-foreground leading-relaxed shadow-xl relative z-20 md:-ml-12 lg:-ml-24 xl:-ml-32">
           <p>{project.description}</p>
         </div>
         
         <div className="flex flex-wrap gap-3 mb-8">
           {project.tags.map((tag: string, tIdx: number) => (
-            <span key={tIdx} className="text-sm font-medium text-slate-600">
-              {tag} {tIdx < project.tags.length - 1 && <span className="mx-2 text-slate-300">•</span>}
+            <span key={tIdx} className="text-sm font-medium text-muted-foreground">
+              {tag} {tIdx < project.tags.length - 1 && <span className="mx-2 text-muted-foreground/60">•</span>}
             </span>
           ))}
         </div>

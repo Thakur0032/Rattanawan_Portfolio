@@ -56,7 +56,7 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-heading font-bold text-slate-900"
+            className="text-3xl md:text-5xl font-heading font-bold text-foreground"
           >
             Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Stories</span>
           </motion.h2>
@@ -69,7 +69,7 @@ export default function Testimonials() {
           {[...testimonials, ...testimonials].map((testimonial, idx) => (
             <div 
               key={idx} 
-              className="w-[350px] md:w-[450px] flex-shrink-0 glass p-8 rounded-3xl border-slate-100 whitespace-normal flex flex-col hover:border-primary/30 transition-colors"
+              className="w-[350px] md:w-[450px] flex-shrink-0 glass p-8 rounded-3xl border-accent whitespace-normal flex flex-col hover:border-primary/30 transition-colors"
             >
               <div className="flex gap-1 mb-6 text-accent">
                 {[...Array(5)].map((_, i) => (
@@ -87,7 +87,7 @@ export default function Testimonials() {
                   <img src={testimonial.image} alt={testimonial.name} className="object-cover w-full h-full" />
                 </div>
                 <div>
-                  <h4 className="font-heading font-bold text-slate-900 text-sm">{testimonial.name}</h4>
+                  <h4 className="font-heading font-bold text-foreground text-sm">{testimonial.name}</h4>
                   <p className="text-muted-foreground text-xs">{testimonial.role}</p>
                 </div>
               </div>

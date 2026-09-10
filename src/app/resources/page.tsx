@@ -25,7 +25,7 @@ export default function ResourcesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           
           {/* Resource Card 1 */}
-          <div className="glass p-8 rounded-[32px] border-slate-100 hover:border-primary/50 transition-colors group">
+          <div className="glass p-8 rounded-[32px] border-accent hover:border-primary/50 transition-colors group">
             <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary mb-6">
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
             </div>
@@ -37,7 +37,7 @@ export default function ResourcesPage() {
           </div>
 
           {/* Resource Card 2 */}
-          <div className="glass p-8 rounded-[32px] border-slate-100 hover:border-primary/50 transition-colors group">
+          <div className="glass p-8 rounded-[32px] border-accent hover:border-primary/50 transition-colors group">
             <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary mb-6">
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             </div>
@@ -49,7 +49,7 @@ export default function ResourcesPage() {
           </div>
 
           {/* Resource Card 3 */}
-          <div className="glass p-8 rounded-[32px] border-slate-100 hover:border-primary/50 transition-colors group">
+          <div className="glass p-8 rounded-[32px] border-accent hover:border-primary/50 transition-colors group">
             <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary mb-6">
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
             </div>
@@ -62,11 +62,11 @@ export default function ResourcesPage() {
 
         </div>
 
-        <div className="max-w-4xl mx-auto mt-16 glass-heavy p-10 rounded-[32px] border-slate-100">
+        <div className="max-w-4xl mx-auto mt-16 glass-heavy p-10 rounded-[32px] border-accent">
           <h2 className="text-2xl font-heading font-bold text-foreground mb-6 text-center">More Healing Resources</h2>
           <div className="flex flex-wrap justify-center gap-2">
             {["Healing Resources", "Resilience Building Resources", "Mindset Resources", "Trauma Support Information", "Guided Journaling Worksheets", "Confidence Building Exercises", "Holistic Wellness Education"].map((tag) => (
-              <span key={tag} className="px-3 py-1.5 bg-slate-100 text-foreground/80 text-sm rounded-lg border border-secondary/20">
+              <span key={tag} className="px-3 py-1.5 bg-accent text-foreground/80 text-sm rounded-lg border border-secondary/20">
                 {tag}
               </span>
             ))}
