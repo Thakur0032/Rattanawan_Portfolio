@@ -13,7 +13,8 @@ const navItems = [
   { 
     name: "Programs", 
     children: [
-      { name: "10-Day Healing", href: "/programs/10-day-healing" }
+      { name: "3-Months Program", href: "/programs/3-months-program" },
+      { name: "Retreat", href: "/retreat" }
     ]
   },
   {

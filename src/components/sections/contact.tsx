@@ -113,7 +113,7 @@ export default function Contact() {
                 className="w-full bg-background border border-secondary/30 rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-primary/50 focus:bg-primary/10 transition-colors appearance-none shadow-inner"
               >
                 <option value="Discovery Call">Discovery Call (Complimentary)</option>
-                <option value="10-Session Transformation">10-Session Transformation</option>
+                <option value="3-Months Transformation">3-Months Transformation</option>
                 <option value="Gut-Directed Hypnotherapy">Gut-Directed Hypnotherapy</option>
                 <option value="Other">Other Inquiry</option>
               </select>

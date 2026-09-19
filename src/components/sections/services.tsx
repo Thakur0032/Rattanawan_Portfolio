@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const services = [
   {
-    title: "10-Session Transformation",
+    title: "3-Months Transformation",
     description: "What if 10 sessions could completely shift the way you think, work, and live? Experience a new mindset and a new life.",
     icon: <RefreshCw size={24} />,
     color: "group-hover:text-primary group-hover:border-primary/50"

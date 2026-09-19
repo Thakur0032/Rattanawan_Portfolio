@@ -114,11 +114,11 @@ export default function Experience() {
             className="hidden lg:flex lg:col-span-4 flex-col gap-8 relative items-center"
           >
             <div className="w-full max-w-sm rounded-3xl glass-heavy p-3 shadow-xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-               <img src="/images/img0.jpg" alt="Gallery 1" className="w-full h-auto object-contain rounded-2xl" />
+               <img src="/images/banner2.jpg" alt="Gallery 1" className="w-full h-auto object-contain rounded-2xl" />
             </div>
             
             <div className="w-4/5 max-w-xs self-end rounded-3xl glass-heavy p-3 shadow-xl -mt-16 transform -rotate-3 hover:rotate-0 transition-transform duration-500 relative z-10">
-               <img src="/images/img2.jpg" alt="Gallery 2" className="w-full h-auto object-contain rounded-2xl" />
+               <img src="/images/banner1.png" alt="Gallery 2" className="w-full h-auto object-contain rounded-2xl" />
             </div>
           </motion.div>
           

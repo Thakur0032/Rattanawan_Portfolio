@@ -57,7 +57,7 @@ export default function About() {
               <div className="md:w-1/3 relative z-10 shrink-0 flex items-start justify-center">
                 <div className="w-full max-w-sm rounded-2xl overflow-hidden bg-card p-2 border border-accent shadow-[0_4px_20px_rgb(0,0,0,0.05)]">
                   <img 
-                    src="/images/img1.jpg" 
+                    src="/images/banner1.png"
                     alt="Rattanawan James" 
                     className="w-full h-auto object-contain rounded-xl transition-transform duration-1000 hover:scale-[1.02]"
                   />

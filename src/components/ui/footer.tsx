@@ -37,7 +37,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <FooterLink href="/">Home</FooterLink>
               <FooterLink href="/about">About Me</FooterLink>
-              <FooterLink href="/programs/10-day-healing">10-Day Healing Program</FooterLink>
+              <FooterLink href="/programs/3-months-program">3-Months Program Program</FooterLink>
               <FooterLink href="/#contact">Contact</FooterLink>
             </ul>
           </div>

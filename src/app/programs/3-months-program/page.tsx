@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "10-Day Healing Program | Rattanawan James",
-  description: "Join the intensive 10-day healing program. A personalized wellness program focusing on emotional healing, stress relief, and holistic personal development.",
+  title: "3-Months Program Program | Rattanawan James",
+  description: "Join the intensive 3-Months Program program. A personalized wellness program focusing on emotional healing, stress relief, and holistic personal development.",
 };
 
 export default function TenDayHealingPage() {
@@ -16,7 +16,7 @@ export default function TenDayHealingPage() {
             Intensive Wellness Program
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6">
-            The <span className="text-transparent bg-clip-text text-gradient">10-Day Healing Program</span>
+            The <span className="text-transparent bg-clip-text text-gradient">3-Months Program Program</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             A deeply immersive, personalized healing program designed to restore energy, clear mental fog, and initiate profound mindset transformation.
