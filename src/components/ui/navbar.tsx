@@ -67,8 +67,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           
           <Link href="/" className="relative z-10 flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-background font-bold text-xl shadow-[0_0_15px_rgba(80,200,198,0.3)] group-hover:scale-105 transition-transform">
-              RJ
+            <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center border border-primary/40 bg-card shadow-[0_0_15px_rgba(80,200,198,0.25)] group-hover:scale-105 transition-transform shrink-0">
+              <img src="/images/logo.png" alt="Rattanawan James Logo" className="w-full h-full object-contain p-1" />
             </div>
             <span className="font-heading font-bold text-xl hidden lg:block text-foreground group-hover:text-primary transition-colors">
               Rattanawan James

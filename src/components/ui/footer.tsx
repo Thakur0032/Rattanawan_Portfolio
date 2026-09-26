@@ -17,8 +17,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-4">
-              <span className="font-heading text-2xl font-bold tracking-tighter text-foreground">
+            <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center border border-primary/40 bg-card shadow-[0_0_15px_rgba(80,200,198,0.2)] group-hover:scale-105 transition-transform shrink-0">
+                <img src="/images/logo.png" alt="Rattanawan James Logo" className="w-full h-full object-contain p-1" />
+              </div>
+              <span className="font-heading text-2xl font-bold tracking-tighter text-foreground group-hover:text-primary transition-colors">
                 Rattanawan James<span className="text-primary">.</span>
               </span>
             </Link>
@@ -37,7 +40,8 @@ export default function Footer() {
             <ul className="space-y-3">
               <FooterLink href="/">Home</FooterLink>
               <FooterLink href="/about">About Me</FooterLink>
-              <FooterLink href="/programs/3-months-program">3-Months Program Program</FooterLink>
+              <FooterLink href="/programs/3-months-program">3-Months Program</FooterLink>
+              <FooterLink href="/retreat">Self-Love Awakening Retreat</FooterLink>
               <FooterLink href="/#contact">Contact</FooterLink>
             </ul>
           </div>

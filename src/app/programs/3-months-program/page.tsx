@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "3-Months Program Program | Rattanawan James",
-  description: "Join the intensive 3-Months Program program. A personalized wellness program focusing on emotional healing, stress relief, and holistic personal development.",
+  title: "3-Months Program | Rattanawan James",
+  description: "Join the intensive 3-Months Program. A personalized wellness program focusing on emotional healing, stress relief, and holistic personal development.",
 };
 
-export default function TenDayHealingPage() {
+export default function ThreeMonthsProgramPage() {
   return (
     <div className="pt-32 pb-24 min-h-screen bg-background">
       <div className="container mx-auto px-4 md:px-6">
@@ -16,7 +16,7 @@ export default function TenDayHealingPage() {
             Intensive Wellness Program
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6">
-            The <span className="text-transparent bg-clip-text text-gradient">3-Months Program Program</span>
+            The <span className="text-transparent bg-clip-text text-gradient">3-Months Program</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             A deeply immersive, personalized healing program designed to restore energy, clear mental fog, and initiate profound mindset transformation.
@@ -71,7 +71,7 @@ export default function TenDayHealingPage() {
               This <strong>mind body healing program</strong> integrates <strong>natural healing</strong>, <strong>balanced living</strong>, and <strong>healthy lifestyle</strong> practices. With my <strong>one-on-one support</strong>, we will create a <strong>personalized wellness plan</strong> for your <strong>long-term well-being</strong>, <strong>sustainable wellness</strong>, and <strong>holistic personal development</strong>.
             </p>
             <a href="/#contact" className="inline-block px-8 py-4 bg-primary text-[#020C1B] font-bold rounded-full transition-transform hover:scale-105">
-              Start Your 10-Day Journey
+              Start Your 3-Months Journey
             </a>
           </div>
         </div>
