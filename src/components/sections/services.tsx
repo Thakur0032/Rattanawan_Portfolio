@@ -117,13 +117,13 @@ export default function Services() {
                   {service.description}
                 </p>
 
-                <div className="mt-8 flex items-center text-xs font-bold uppercase tracking-widest text-muted-foreground group-hover:text-[#020C1B] transition-colors cursor-pointer relative z-10">
+                <div className="mt-8 flex items-center text-xs font-bold uppercase tracking-widest text-primary/80 group-hover:text-primary transition-colors cursor-pointer relative z-10">
                   <span>Learn More</span>
                   <motion.div
                     animate={{ x: hoveredIndex === idx ? 5 : 0 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
-                    <span className="ml-2 text-primary">→</span>
+                    <span className="ml-2 text-primary font-bold">→</span>
                   </motion.div>
                 </div>
               </div>

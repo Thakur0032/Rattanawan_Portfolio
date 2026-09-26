@@ -51,19 +51,18 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link
                 href="#contact"
-                className="group relative px-8 py-4 bg-primary text-[#020C1B] font-extrabold rounded-xl overflow-hidden flex items-center justify-center gap-2 transition-all hover:shadow-[0_8px_30px_rgb(10,186,181,0.3)] hover:-translate-y-1"
+                className="btn-shine group relative px-8 py-4 bg-primary text-[#020C1B] font-extrabold rounded-xl overflow-hidden flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_8px_35px_rgba(80,200,198,0.5)] hover:-translate-y-1 hover:scale-[1.02]"
               >
-                <div className="absolute inset-0 bg-card/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative z-10">Schedule Strategy Session</span>
                 <Calendar size={18} className="relative z-10 group-hover:scale-110 transition-transform" />
               </Link>
               
               <Link
                 href="#services"
-                className="group px-8 py-4 bg-card border border-accent hover:border-slate-300 hover:bg-secondary text-foreground/80 font-medium rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-md"
+                className="group px-8 py-4 bg-card/80 border border-primary/20 hover:border-primary hover:bg-card text-foreground/90 font-medium rounded-xl flex items-center justify-center gap-2 transition-all duration-300 shadow-sm hover:shadow-[0_4px_20px_rgba(80,200,198,0.15)] hover:-translate-y-0.5"
               >
                 <span>Explore Solutions</span>
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform text-primary" />
+                <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform text-primary" />
               </Link>
             </div>
 

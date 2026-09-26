@@ -24,12 +24,17 @@
   --font-heading: var(--font-playfair);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -52,29 +57,93 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--primary);
 }
 
-/* Premium High-Contrast Dark Business Cards */
+/* Premium High-Contrast Dark Business Cards with subtle glass glow */
 .glass {
-  background: var(--card);
-  border: 1px solid var(--accent);
+  background: rgba(17, 34, 64, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(80, 200, 198, 0.15);
   box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
 }
 
 .glass:hover {
-  border-color: var(--primary);
-  box-shadow: 0 10px 30px -15px rgba(80, 200, 198, 0.2);
+  border-color: rgba(80, 200, 198, 0.45);
+  box-shadow: 0 14px 40px -10px rgba(80, 200, 198, 0.22);
+  transform: translateY(-2px);
 }
 
 .glass-heavy {
-  background: #0A192F;
-  border: 1px solid var(--accent);
-  box-shadow: 0 20px 40px -15px rgba(2, 12, 27, 0.9);
+  background: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(80, 200, 198, 0.2);
+  box-shadow: 0 20px 50px -15px rgba(2, 12, 27, 0.9);
 }
 
 .text-gradient {
   background: linear-gradient(135deg, #50C8C6 0%, #E6F1FF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Shimmer & Pulse Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(200%);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-subtle 8s ease-in-out infinite;
+}
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: translateX(-100%);
+  transition: none;
+}
+
+.btn-shine:hover::after {
+  animation: shine 1s ease-in-out;
 }
 
 /* Subtle noise texture */
