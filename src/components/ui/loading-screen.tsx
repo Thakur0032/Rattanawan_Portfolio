@@ -42,8 +42,9 @@ export default function LoadingScreen() {
           </div>
           
           <div className="flex items-center gap-4">
-            <span className="font-heading text-4xl font-bold tracking-tighter text-foreground">
-              MD<span className="text-primary">.</span>
+            <span className="font-heading text-4xl font-bold tracking-tighter text-foreground flex items-center gap-2">
+              <img src="/images/logo.png" alt="Rattanawan James" className="w-9 h-9 object-contain" />
+              RJ<span className="text-primary">.</span>
             </span>
             <div className="w-px h-8 bg-card/20" />
             <motion.span 

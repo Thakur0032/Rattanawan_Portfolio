@@ -4,12 +4,19 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Only enable if pointer is fine (mouse/trackpad, not touch)
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      return;
+    }
+
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -27,22 +34,27 @@ export default function CustomCursor() {
       }
     };
 
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+
     window.addEventListener("mousemove", updateMousePosition);
     window.addEventListener("mouseover", handleMouseOver);
+    document.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
       window.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
-  // Don't render on touch devices
-  if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
+  if (!isVisible) {
     return null;
   }
 
   return (
-    <>
+    <div className="hidden md:block">
       <motion.div
         className="fixed top-0 left-0 w-4 h-4 bg-primary rounded-full pointer-events-none z-[100] mix-blend-screen"
         animate={{
@@ -58,10 +70,10 @@ export default function CustomCursor() {
           x: mousePosition.x - 24,
           y: mousePosition.y - 24,
           scale: isHovering ? 1.5 : 1,
-          backgroundColor: isHovering ? "rgba(0, 229, 255, 0.1)" : "rgba(0,0,0,0)",
+          backgroundColor: isHovering ? "rgba(80, 200, 198, 0.1)" : "rgba(0,0,0,0)",
         }}
         transition={{ type: "spring", stiffness: 250, damping: 20, mass: 0.5 }}
       />
-    </>
+    </div>
   );
 }

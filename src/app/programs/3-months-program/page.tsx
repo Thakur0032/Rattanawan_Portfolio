@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "3-Months Program | Rattanawan James",
@@ -70,9 +71,9 @@ export default function ThreeMonthsProgramPage() {
             <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
               This <strong>mind body healing program</strong> integrates <strong>natural healing</strong>, <strong>balanced living</strong>, and <strong>healthy lifestyle</strong> practices. With my <strong>one-on-one support</strong>, we will create a <strong>personalized wellness plan</strong> for your <strong>long-term well-being</strong>, <strong>sustainable wellness</strong>, and <strong>holistic personal development</strong>.
             </p>
-            <a href="/#contact" className="inline-block px-8 py-4 bg-primary text-[#020C1B] font-bold rounded-full transition-transform hover:scale-105">
+            <Link href="/#contact" className="inline-block px-8 py-4 bg-primary text-[#020C1B] font-bold rounded-full transition-transform hover:scale-105">
               Start Your 3-Months Journey
-            </a>
+            </Link>
           </div>
         </div>
 

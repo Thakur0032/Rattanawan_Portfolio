@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Hypnotherapy Services | Rattanawan James",
@@ -68,9 +69,9 @@ export default function HypnotherapyPage() {
 
         {/* CTA */}
         <div className="max-w-4xl mx-auto text-center mt-12">
-          <a href="/#contact" className="inline-block px-8 py-4 bg-primary text-[#020C1B] font-bold rounded-full transition-transform hover:scale-105">
+          <Link href="/#contact" className="inline-block px-8 py-4 bg-primary text-[#020C1B] font-bold rounded-full transition-transform hover:scale-105">
             Book a Hypnotherapy Session
-          </a>
+          </Link>
         </div>
 
       </div>

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Spinal Synergy & Energy Healing | Rattanawan James",
@@ -100,7 +101,7 @@ export default function SpinalSynergyPage() {
                 <li>• Anger, resentment, and old emotional wounds</li>
                 <li>• Lack of self-love, loneliness, lack of self-confidence</li>
                 <li>• Existential insecurity, fear of future, lack of motivation</li>
-                <li>• Feelings of guilt regarding one's own happiness</li>
+                <li>• Feelings of guilt regarding one&apos;s own happiness</li>
               </ul>
             </div>
 
@@ -109,9 +110,9 @@ export default function SpinalSynergyPage() {
 
         {/* CTA */}
         <div className="max-w-4xl mx-auto text-center mt-20">
-          <a href="/#contact" className="inline-block px-8 py-4 bg-primary text-[#020C1B] font-bold rounded-full transition-transform hover:scale-105">
+          <Link href="/#contact" className="inline-block px-8 py-4 bg-primary text-[#020C1B] font-bold rounded-full transition-transform hover:scale-105">
             Book Personalized Spinal Sessions
-          </a>
+          </Link>
         </div>
 
       </div>

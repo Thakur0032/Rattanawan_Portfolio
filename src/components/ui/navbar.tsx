@@ -120,7 +120,7 @@ export default function Navbar() {
               href="/#contact"
               className="px-5 py-2.5 rounded-full bg-secondary border border-secondary/30 text-foreground font-medium hover:bg-accent hover:border-secondary transition-all shadow-sm whitespace-nowrap"
             >
-              Let's Talk
+              Let&apos;s Talk
             </Link>
           </nav>
 
@@ -177,7 +177,7 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
               className="mt-6 w-full px-5 py-3 rounded-xl bg-primary text-[#020C1B] font-medium text-center"
             >
-              Let's Talk
+              Let&apos;s Talk
             </Link>
           </motion.div>
         )}

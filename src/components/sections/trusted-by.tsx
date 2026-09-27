@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export default function TrustedBy() {
   return (
     <section className="py-12 bg-card border-y border-accent overflow-hidden">

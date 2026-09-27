@@ -103,7 +103,16 @@ export default function About() {
   );
 }
 
-function StatCard({ icon, end, suffix, label, delay, isInView }: any) {
+interface StatCardProps {
+  icon: React.ReactNode;
+  end: number;
+  suffix: string;
+  label: string;
+  delay: number;
+  isInView: boolean;
+}
+
+function StatCard({ icon, end, suffix, label, delay, isInView }: StatCardProps) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {

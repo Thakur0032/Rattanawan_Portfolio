@@ -17,9 +17,7 @@ import {
   Quote, 
   Award, 
   Check, 
-  Send,
-  Compass,
-  Sparkle
+  Send
 } from "lucide-react";
 import Link from "next/link";
 
@@ -142,7 +140,7 @@ export default function RetreatPage() {
             </h1>
             
             <p className="text-xl sm:text-2xl text-primary font-medium tracking-wide leading-snug">
-              A retreat to become disillusioned with everything that's been holding you back.
+              A retreat to become disillusioned with everything that&apos;s been holding you back.
             </p>
 
             <div className="space-y-4 text-base sm:text-lg text-[#CCD6F6] leading-relaxed font-light">
@@ -150,7 +148,7 @@ export default function RetreatPage() {
                 After you attend this 12-day luxury retreat, you will find the root cause of the undesirable emotions and lifestyle behaviours that are holding you back, such as self-sabotage; heal childhood trauma; and release fear, doubt, and guilt.
               </p>
               <p>
-                My work will guide you to understand that every feeling has its purpose and to slowly dissolve the energetic patterns by expressing those feelings more deeply than you have before. My work involves a combination of spinal synergy, hypnotherapy, self-mastery techniques, and past-life regression. Through these methods, we will peel back the layers of the unconscious mind and create a new life unlike any you've known before.
+                My work will guide you to understand that every feeling has its purpose and to slowly dissolve the energetic patterns by expressing those feelings more deeply than you have before. My work involves a combination of spinal synergy, hypnotherapy, self-mastery techniques, and past-life regression. Through these methods, we will peel back the layers of the unconscious mind and create a new life unlike any you&apos;ve known before.
               </p>
             </div>
 
@@ -239,7 +237,7 @@ export default function RetreatPage() {
                 
                 {/* Always visible intro paragraph */}
                 <p className="text-sm sm:text-base text-[#CCD6F6] leading-relaxed">
-                  Work with a team member three times a day through Spinal Neuro Synergy Therapy (SNST), a practice designed to support the body’s natural ability to release tension, stress, and deeply held emotional patterns.
+                  Work with a team member three times a day through Spinal Neuro Synergy Therapy (SNST), a practice designed to support the body&apos;s natural ability to release tension, stress, and deeply held emotional patterns.
                 </p>
 
                 {/* Collapsible remaining content with smooth height animation */}
@@ -257,7 +255,7 @@ export default function RetreatPage() {
                         The approach is based on the idea that the body can retain the imprint of past experiences. Through gentle spinal and energetic work, SNST aims to help release stored emotional energy associated with childhood trauma experiences, foggy-headedness, and recurring patterns.
                       </p>
                       <p>
-                        The practice also works with the body’s energetic system and chakras, with the intention of encouraging greater balance and flow through the spinal and astral column. By cultivating a greater sense of safety and regulation, the aim is to move away from habitual fight, flight, or freeze responses and create more space to consciously choose how to respond to life’s challenges. This can allow your body to heal itself and stop uncomfortable patterns from resurfacing.
+                        The practice also works with the body&apos;s energetic system and chakras, with the intention of encouraging greater balance and flow through the spinal and astral column. By cultivating a greater sense of safety and regulation, the aim is to move away from habitual fight, flight, or freeze responses and create more space to consciously choose how to respond to life&apos;s challenges. This can allow your body to heal itself and stop uncomfortable patterns from resurfacing.
                       </p>
                     </motion.div>
                   )}
@@ -428,7 +426,7 @@ export default function RetreatPage() {
                 The Deep Inner Path <span className="text-primary">Healing Method</span>
               </h2>
               <p className="text-base md:text-lg text-[#CCD6F6] leading-relaxed font-light">
-                My work involves a combination of spinal synergy, hypnotherapy, self-mastery techniques, and past-life regression. We do this because we need different techniques to target the conscious, subconscious, unconscious mind and the body itself. Most approaches only touch one. So the change feels good for a while, then the unhealed layers and limiting beliefs underneath pull you right back. By working all of them together, through these methods, we will peel back the layers of the unconscious mind and create a new life unlike any you've known before.
+                My work involves a combination of spinal synergy, hypnotherapy, self-mastery techniques, and past-life regression. We do this because we need different techniques to target the conscious, subconscious, unconscious mind and the body itself. Most approaches only touch one. So the change feels good for a while, then the unhealed layers and limiting beliefs underneath pull you right back. By working all of them together, through these methods, we will peel back the layers of the unconscious mind and create a new life unlike any you&apos;ve known before.
               </p>
             </div>
 
@@ -538,7 +536,7 @@ export default function RetreatPage() {
                     Your retreat is where it begins. What follows is three months of weekly one-on-one sessions with Rattanawan — time to take the openings you felt on retreat and weave them into the way you actually live.
                   </p>
                   <p>
-                    Each session guides you into a deep state of relaxation and reflection, where the usual mental noise softens, and you can meet yourself honestly. From that settled, open place, you begin to notice the beliefs and patterns that have quietly run your life — the old stories about what's possible for you, what you deserve, what feels safe. With Rattanawan's guidance, you gently loosen their hold.
+                    Each session guides you into a deep state of relaxation and reflection, where the usual mental noise softens, and you can meet yourself honestly. From that settled, open place, you begin to notice the beliefs and patterns that have quietly run your life — the old stories about what&apos;s possible for you, what you deserve, what feels safe. With Rattanawan&apos;s guidance, you gently loosen their hold.
                   </p>
                 </div>
 
@@ -556,7 +554,7 @@ export default function RetreatPage() {
                         This is personal, unhurried work. Some sessions bring a long-held feeling to the surface; others simply let you see a familiar pattern from a new angle. Rattanawan holds that space and helps you make sense of what arises, so that instead of being pulled by old reactions, you can begin to respond from a clearer, wiser place within you.
                       </p>
                       <p>
-                        Over three months, these shifts compound. Patterns that used to run in the background lose their charge. You reconnect with the steady, knowing part of yourself and let it lead — not just in our sessions, but in the everyday choices that shape your life. You leave not "fixed," but more at home in yourself: calmer, clearer, and able to choose in a way that truly aligns with who you're becoming.
+                        Over three months, these shifts compound. Patterns that used to run in the background lose their charge. You reconnect with the steady, knowing part of yourself and let it lead — not just in our sessions, but in the everyday choices that shape your life. You leave not &ldquo;fixed,&rdquo; but more at home in yourself: calmer, clearer, and able to choose in a way that truly aligns with who you&apos;re becoming.
                       </p>
                     </motion.div>
                   )}
@@ -617,7 +615,7 @@ export default function RetreatPage() {
               All-Inclusive Luxury
             </div>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-8">
-              What's <span className="text-primary">Included</span>
+              What&apos;s <span className="text-primary">Included</span>
             </h2>
 
             <ul className="space-y-4">
@@ -780,10 +778,10 @@ export default function RetreatPage() {
                 
                 <div className="space-y-4 text-sm sm:text-base text-[#CCD6F6] leading-relaxed font-light">
                   <p>
-                    I was born in Thailand to a farm family. My mom worked tirelessly to put food on the table while my dad struggled with alcoholism. The house was often filled with arguments and fear, and as a child, I thought that was normal because that's all I knew. I carried those emotional patterns into adulthood without realising it. I thought I was just the way I was.
+                    I was born in Thailand to a farm family. My mom worked tirelessly to put food on the table while my dad struggled with alcoholism. The house was often filled with arguments and fear, and as a child, I thought that was normal because that&apos;s all I knew. I carried those emotional patterns into adulthood without realising it. I thought I was just the way I was.
                   </p>
                   <p>
-                    It wasn't until my late husband gently said, <em>"Darling, it's not normal to stay angry for seven or ten days."</em> And I thought, <em>"What are you talking about? I'm fine."</em> Later, when my ex said almost the exact same thing, hearing it from two people who loved me made me pause. It pushed me to wonder: why are they saying the same thing? What am I not seeing?
+                    It wasn&apos;t until my late husband gently said, <em>&ldquo;Darling, it&apos;s not normal to stay angry for seven or ten days.&rdquo;</em> And I thought, <em>&ldquo;What are you talking about? I&apos;m fine.&rdquo;</em> Later, when my ex said almost the exact same thing, hearing it from two people who loved me made me pause. It pushed me to wonder: why are they saying the same thing? What am I not seeing?
                   </p>
                 </div>
 
@@ -798,10 +796,10 @@ export default function RetreatPage() {
                       className="overflow-hidden space-y-4 pt-4 text-sm sm:text-base text-[#CCD6F6] leading-relaxed font-light border-t border-white/5 mt-4"
                     >
                       <p>
-                        That's when I started searching for answers. I eventually realised I'd been living with depression for years without knowing it. My ex sent me a video about Bob Proctor, and something in that message sparked a curiosity in me. I wanted to understand why I thought and felt the way I did.
+                        That&apos;s when I started searching for answers. I eventually realised I&apos;d been living with depression for years without knowing it. My ex sent me a video about Bob Proctor, and something in that message sparked a curiosity in me. I wanted to understand why I thought and felt the way I did.
                       </p>
                       <p>
-                        I went to seminars, read countless books, and learned from teachers like Tony Robbins, Dr Joe Dispenza, and others. I studied mindset, human behaviour, hypnotherapy, and unconscious programming because I wanted to understand why I wasn't able to heal completely.
+                        I went to seminars, read countless books, and learned from teachers like Tony Robbins, Dr Joe Dispenza, and others. I studied mindset, human behaviour, hypnotherapy, and unconscious programming because I wanted to understand why I wasn&apos;t able to heal completely.
                       </p>
                       <p>
                         Many methods taught me something valuable, but I still felt like something was missing. Over time, I began to develop my own approach, one that aims to go deeper into trauma, deeper into limiting beliefs and help people find their own truth. So today, my story continues as someone still healing, still learning, but also sharing tools that have helped a handful of people already.
