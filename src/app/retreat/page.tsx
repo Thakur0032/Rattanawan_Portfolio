@@ -172,7 +172,7 @@ export default function RetreatPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary w-fit border border-primary/20 shadow-sm backdrop-blur-md">
               <Sparkles className="w-4 h-4 animate-spin-slow" />
-              <span className="text-xs md:text-sm font-semibold tracking-wider uppercase">Name of Retreat: Self-Love Awakening Retreat</span>
+              <span className="text-xs md:text-sm font-semibold tracking-wider uppercase">Self-Love Awakening Retreat</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-[1.12] text-white">
