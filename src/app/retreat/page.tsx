@@ -15,9 +15,13 @@ import {
   Clock, 
   Waves, 
   Quote, 
-  Award, 
   Check, 
-  Send
+  X,
+  Send,
+  ShieldCheck,
+  Building,
+  CreditCard,
+  AlertCircle
 } from "lucide-react";
 import Link from "next/link";
 
@@ -27,14 +31,14 @@ export default function RetreatPage() {
 
   // Read more states for equal card heights
   const [expandedHighlights, setExpandedHighlights] = useState<{ [key: string]: boolean }>({
-    snst: false,
+    snef: false,
     hypno: false,
     group: false
   });
 
   const [expandedIntegration, setExpandedIntegration] = useState<{ [key: string]: boolean }>({
     program: false,
-    daily: false
+    deepDive: false
   });
 
   const [expandedAbout, setExpandedAbout] = useState<{ [key: string]: boolean }>({
@@ -58,23 +62,55 @@ export default function RetreatPage() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  const forYouList = [
+    "You feel that some patterns, situations, or habits keep repeating in your life, and you’re ready to understand why, so that you can rewrite the story.",
+    "The same problems arise in different relationships, and you’re ready to heal yourself so that you can understand the relationship and better navigate it.",
+    "You experience physical illness, and you're ready to feel differently in your body and mind.",
+    "You’ve tried reading books and doing courses, but now you’re ready to be held in a way that reveals your truth.",
+    "You are willing to be honest, open to the truth, and ready to change."
+  ];
+
+  const notForYouList = [
+    "You’re looking for a healing that doesn’t require your participation.",
+    "You’re not ready to face the truth.",
+    "You’re not open to feedback.",
+    "You’re not ready to question the story you’ve been telling yourself about who you are."
+  ];
+
   const clientStories = [
-    { title: "Sleep Issues Reversed", desc: "Sleep issues for years that were immediately reversed." },
-    { title: "Bladder Issues Resolved", desc: "Bladder issues, completely reversed." },
-    { title: "Overcoming Dependencies", desc: "Stop drink & stop smoking naturally." },
-    { title: "Financial Abundance", desc: "Receive money in 7 days." },
-    { title: "Career Breakthrough", desc: "Get a job & aligned life purpose." }
+    "Sleep issues for years that were immediately reversed.",
+    "Bladder issues, reversed.",
+    "Stop drink",
+    "Stop smoking",
+    "Receive money in 7 days",
+    "Get a job",
+    "Feeling the healing in the body"
   ];
 
   const whatIsIncluded = [
     "11-night stay in a private room at a luxury beachfront hotel in Thailand",
-    "3 abundant, nutritious and delicious meals per day",
+    "3 abundant, nutritious, and delicious meals per day",
     "1 Deep Inner Path Healing Hypnotherapy & Self Mastery Technique",
-    "3 Spinal Synergy sessions per day (depending on your tolerance)",
+    "3 Spinal Neuro Energy Flow (SNEF) sessions per day (depending on your tolerance)",
     "Choice of spa treatment each day (massage, facial, etc.)",
     "Group sessions exploring inherited trauma, family patterns, and latent emotional impressions",
     "Transportation from the airport to the hotel",
-    "1-1 mindset coaching each week for 3 months after the retreat"
+    "1-1 mindset coaching every other week for 3 months after the retreat"
+  ];
+
+  const dailySchedule = [
+    { time: "6:30am", activity: "Gentle movement" },
+    { time: "7:45am", activity: "Breakfast" },
+    { time: "8:30am", activity: "Spinal Neuro Energy Flow (SNEF)" },
+    { time: "9:30am", activity: "Group Session" },
+    { time: "10:30am", activity: "Free Time (spa services: massage, facial, etc)" },
+    { time: "12:00pm", activity: "Lunch" },
+    { time: "1:00pm", activity: "Spinal Neuro Energy Flow (SNEF)" },
+    { time: "2:00pm", activity: "Free Time" },
+    { time: "3:30pm", activity: "Deep Inner Path Healing Hypnotherapy & Coaching" },
+    { time: "5:00pm", activity: "Dinner" },
+    { time: "6:00pm", activity: "Spinal Neuro Energy Flow (SNEF)" },
+    { time: "7:00pm", activity: "Sound Healing" }
   ];
 
   const areasOfSpeciality = [
@@ -93,11 +129,11 @@ export default function RetreatPage() {
   const faqs = [
     {
       q: "How many people will there be?",
-      a: "We modelled six guests to ensure deep, intimate, and personalized attention. We are also open to beginning with intimate containers of one or two guests as long as the retreat remains a comprehensive 10-day intensive healing experience."
+      a: "There will be a maximum of six guests to ensure deep, intimate, and personalized attention. There is availability for more intimate containers of one or two guests. In either case, this is a comprehensive 10-day intensive healing experience."
     },
     {
       q: "What can I expect to feel during the retreat?",
-      a: "Through guided relaxation, you will be gently supported into a profound state of calm and inner awareness. Through gentle spinal neuro synergy therapy (SNST 3 times daily) and 1-on-1 hypnotherapy, stored physical and emotional tension releases. You will experience moving away from habitual fight, flight, or freeze into nervous system regulation, mental clarity, and reconnecting with your calm, knowing self."
+      a: "Through guided relaxation, you will be gently supported into a profound state of calm and inner awareness. Through gentle spinal neuro synergy therapy (Spinal Neuro Energy Flow (SNEF) 3 times daily) and Deep Inner Healing Hypnotherapy & Coaching, stored physical and emotional tension is released. You will experience moving away from habitual fight, flight, or freeze into nervous system regulation, mental clarity, and reconnecting with your calm, knowing self."
     },
     {
       q: "What kinds of problems does this help with?",
@@ -105,11 +141,15 @@ export default function RetreatPage() {
     },
     {
       q: "What is the retreat format & daily rhythm?",
-      a: "The retreat is structured across 12 days (11 nights): an arrival and welcome day, 8 full working days (with 2 to 3 healing sessions per day tailored safely to your tolerance), and a departure day without a healing session. Followed by 3 months of weekly one-on-one integration coaching with Rattanawan."
+      a: "The retreat is structured across 12 days (11 nights): an arrival and welcome day, 10 full working days (with 2-4 healing sessions per day tailored safely to your tolerance), and a departure day. Mornings will start with some gentle movement, breakfast, followed by your healing sessions before and after lunch and dinner. After the retreat concludes, you will receive 3 months of one-on-one integration coaching every other week with Rattanawan."
     },
     {
-      q: "Where is the retreat located & what is included?",
-      a: "Held at a Beachfront Luxury Hotel in Thailand. You will have a private room, space to relax and contemplate, and spa services available. It includes 3 abundant, nutritious meals daily, airport transportation, all private and group sessions, and 3 months of post-retreat support. Specific venue is disclosed depending on your attendance date."
+      q: "Where is the retreat located and what is included?",
+      a: "Held at a Beachfront Luxury Hotel in Thailand. You will have a private room and space to relax and contemplate. It includes 3 abundant, nutritious meals daily, airport transportation, daily spa services of your choice, all private and group sessions, and 3 months of post-retreat support. The specific venue is disclosed depending on your attendance date."
+    },
+    {
+      q: "How do I reserve my space?",
+      a: "A deposit of 14.5k pounds is required to reserve your retreat space; an additional 4k pounds will be due before the start of the retreat. The remaining balance can be paid in full or on a 3-part payment plan concluding 3 months after the retreat. A Wise transfer can be used to place your deposit."
     }
   ];
 
@@ -118,7 +158,7 @@ export default function RetreatPage() {
       {/* Background Ambience / Subtle Animated Glowing Orbs */}
       <div className="absolute top-0 left-1/4 w-[650px] h-[650px] bg-primary/10 rounded-full blur-[160px] -translate-y-1/2 pointer-events-none animate-pulse-slow" />
       <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[140px] pointer-events-none animate-float" />
-      <div className="absolute bottom-1/4 -left-20 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[160px] pointer-events-none animate-pulse-slow" />
+      <div className="absolute bottom-1/4 -left-20 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[160px] pointer-events-none" />
 
       {/* Hero Section */}
       <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-20 z-10">
@@ -132,7 +172,7 @@ export default function RetreatPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary w-fit border border-primary/20 shadow-sm backdrop-blur-md">
               <Sparkles className="w-4 h-4 animate-spin-slow" />
-              <span className="text-xs md:text-sm font-semibold tracking-wider uppercase">12-Day Luxury Intensive Retreat</span>
+              <span className="text-xs md:text-sm font-semibold tracking-wider uppercase">Name of Retreat: Self-Love Awakening Retreat</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-[1.12] text-white">
@@ -140,7 +180,7 @@ export default function RetreatPage() {
             </h1>
             
             <p className="text-xl sm:text-2xl text-primary font-medium tracking-wide leading-snug">
-              A retreat to become disillusioned with everything that&apos;s been holding you back.
+              A retreat to become disillusioned with everything that’s been holding you back.
             </p>
 
             <div className="space-y-4 text-base sm:text-lg text-[#CCD6F6] leading-relaxed font-light">
@@ -164,7 +204,7 @@ export default function RetreatPage() {
                 href="#highlights" 
                 className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-card/70 text-foreground border border-primary/25 font-semibold hover:border-primary hover:bg-card transition-all duration-300"
               >
-                Explore Key Highlights
+                Explore 3 Key Highlights
               </Link>
             </div>
           </motion.div>
@@ -181,7 +221,7 @@ export default function RetreatPage() {
                 alt="Self-Love Awakening Retreat" 
                 className="w-full h-auto rounded-3xl object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               />
-              <div className="mt-4 p-4 rounded-2xl bg-background/80 border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 backdrop-blur-md">
+              <div className="mt-4 p-4 rounded-2xl bg-[#071328]/90 border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 backdrop-blur-md">
                 <div>
                   <p className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">Location</p>
                   <p className="text-sm font-bold text-white flex items-center gap-1.5 mt-0.5">
@@ -207,10 +247,10 @@ export default function RetreatPage() {
           
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-widest mb-4">
-              Core Pillars
+              Core Modalities
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white">
-              3 Key <span className="text-primary">Highlights</span>
+              3 Key <span className="text-primary">Highlights:</span>
             </h2>
             <p className="text-muted-foreground mt-4 text-base sm:text-lg">
               A comprehensive multi-dimensional methodology combining nervous system regulation, subconscious reprogramming, and deep trauma resolution.
@@ -219,7 +259,7 @@ export default function RetreatPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             
-            {/* Highlight 1: SNST */}
+            {/* Highlight 1: SNEF */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -232,19 +272,19 @@ export default function RetreatPage() {
                   <Waves className="w-7 h-7" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-4">
-                  Spinal Neuro Synergy Therapy <span className="text-primary">(SNST)</span>
+                  Spinal Neuro Energy Flow <span className="text-primary">(SNEF)</span>
                 </h3>
                 
                 {/* Always visible intro paragraph */}
                 <p className="text-sm sm:text-base text-[#CCD6F6] leading-relaxed">
-                  Work with a team member three times a day through Spinal Neuro Synergy Therapy (SNST), a practice designed to support the body&apos;s natural ability to release tension, stress, and deeply held emotional patterns.
+                  Work with a team member three times a day through Spinal Neuro Energy Flow (SNEF), a practice designed to support the body’s natural ability to release tension, stress, and deeply held emotional patterns.
                 </p>
 
                 {/* Collapsible remaining content with smooth height animation */}
                 <AnimatePresence initial={false}>
-                  {expandedHighlights.snst && (
+                  {expandedHighlights.snef && (
                     <motion.div
-                      key="snst-content"
+                      key="snef-content"
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
@@ -252,10 +292,13 @@ export default function RetreatPage() {
                       className="overflow-hidden space-y-4 pt-4 text-sm sm:text-base text-[#CCD6F6] leading-relaxed border-t border-white/5 mt-4"
                     >
                       <p>
-                        The approach is based on the idea that the body can retain the imprint of past experiences. Through gentle spinal and energetic work, SNST aims to help release stored emotional energy associated with childhood trauma experiences, foggy-headedness, and recurring patterns.
+                        The approach is based on the idea that the body can retain the imprint of past experiences. Through gentle spinal and energetic work, Spinal Neuro Energy Flow (SNEF) aims to help release stored emotional energy associated with childhood trauma experiences, foggy-headedness, and recurring patterns.
                       </p>
                       <p>
-                        The practice also works with the body&apos;s energetic system and chakras, with the intention of encouraging greater balance and flow through the spinal and astral column. By cultivating a greater sense of safety and regulation, the aim is to move away from habitual fight, flight, or freeze responses and create more space to consciously choose how to respond to life&apos;s challenges. This can allow your body to heal itself and stop uncomfortable patterns from resurfacing.
+                        The practice also works with the body’s energetic system and chakras, with the intention of encouraging greater balance and flow through the spinal and astral column. By cultivating a greater sense of safety and regulation, the aim is to move away from habitual fight, flight, or freeze responses and create more space to consciously choose how to respond to life’s challenges. This can allow your body to heal itself and stop uncomfortable patterns from resurfacing.
+                      </p>
+                      <p className="text-xs text-primary/90 italic pt-2 border-t border-white/5">
+                        * SNEF (Spinal Neuro Energy Flow) energetic bodywork re-wires nervous pathways, unblocks chakra flow, and releases trauma stored deep within physical tissue.
                       </p>
                     </motion.div>
                   )}
@@ -266,10 +309,10 @@ export default function RetreatPage() {
               <div className="mt-6 pt-4 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <button
                   type="button"
-                  onClick={() => toggleHighlight("snst")}
+                  onClick={() => toggleHighlight("snef")}
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-primary hover:text-white transition-colors cursor-pointer w-fit py-1"
                 >
-                  {expandedHighlights.snst ? (
+                  {expandedHighlights.snef ? (
                     <>Show Less <ChevronUp className="w-4 h-4" /></>
                   ) : (
                     <>Read More <ChevronDown className="w-4 h-4" /></>
@@ -294,7 +337,7 @@ export default function RetreatPage() {
                   <Brain className="w-7 h-7" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-4">
-                  Daily 1-to-1 Hypnotherapy & <span className="text-primary">Self-Mastery</span>
+                  Daily 1-to-1 Hypnotherapy & <span className="text-primary">Self-Mastery Techniques</span>
                 </h3>
                 
                 {/* Always visible intro paragraph */}
@@ -359,7 +402,7 @@ export default function RetreatPage() {
                   <HeartHandshake className="w-7 h-7" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-4">
-                  Group Sessions: <span className="text-primary">Inherited Trauma</span>
+                  Group Sessions: <span className="text-primary">Understanding Inherited Trauma</span>
                 </h3>
                 
                 {/* Always visible intro paragraph */}
@@ -382,7 +425,7 @@ export default function RetreatPage() {
                         By becoming more aware of patterns that may have been passed down through generations or absorbed through our experiences, we can begin to develop greater emotional independence from them.
                       </p>
                       <p>
-                        In this supportive shared space, you will gain deep clarity on inherited familial tendencies, emotional baggage that was never yours to carry, and how to permanently release them to move through life with authentic confidence and peace.
+                        By understanding these traits, we can begin the process of becoming emotionally independent from them and stop moving through fear. Find more confidence.
                       </p>
                     </motion.div>
                   )}
@@ -403,7 +446,7 @@ export default function RetreatPage() {
                   )}
                 </button>
                 <span className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
-                  Interactive Circles
+                  Supportive Circles
                 </span>
               </div>
             </motion.div>
@@ -420,49 +463,119 @@ export default function RetreatPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
             <div className="lg:col-span-8 space-y-6">
               <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-widest">
-                Our Signature Approach
+                Our Signature Method
               </div>
               <h2 className="text-3xl md:text-5xl font-heading font-bold text-white">
                 The Deep Inner Path <span className="text-primary">Healing Method</span>
               </h2>
               <p className="text-base md:text-lg text-[#CCD6F6] leading-relaxed font-light">
-                My work involves a combination of spinal synergy, hypnotherapy, self-mastery techniques, and past-life regression. We do this because we need different techniques to target the conscious, subconscious, unconscious mind and the body itself. Most approaches only touch one. So the change feels good for a while, then the unhealed layers and limiting beliefs underneath pull you right back. By working all of them together, through these methods, we will peel back the layers of the unconscious mind and create a new life unlike any you&apos;ve known before.
+                My work involves a combination of spinal synergy, hypnotherapy, self-mastery techniques, and past-life regression. We do this because we need different techniques to target the conscious, subconscious, unconscious mind, and the body itself. Most approaches only touch one. So the change feels good for a while, then the unhealed layers and limiting beliefs underneath pull you right back. By working all of them together, through these methods, we will peel back the layers of the unconscious mind and create a new life unlike any you&apos;ve known before.
               </p>
             </div>
 
             <div className="lg:col-span-4 grid grid-cols-2 gap-4">
-              <div className="p-5 rounded-2xl bg-card/90 border border-primary/20 text-center hover:border-primary transition-colors">
-                <p className="text-2xl font-bold text-primary font-heading">Conscious</p>
+              <div className="p-5 rounded-2xl bg-[#071328]/90 border border-primary/20 text-center hover:border-primary transition-colors">
+                <p className="text-xl font-bold text-primary font-heading">Conscious</p>
                 <p className="text-xs text-muted-foreground mt-1 font-medium">Reasoning Mind</p>
               </div>
-              <div className="p-5 rounded-2xl bg-card/90 border border-primary/20 text-center hover:border-primary transition-colors">
-                <p className="text-2xl font-bold text-primary font-heading">Subconscious</p>
+              <div className="p-5 rounded-2xl bg-[#071328]/90 border border-primary/20 text-center hover:border-primary transition-colors">
+                <p className="text-xl font-bold text-primary font-heading">Subconscious</p>
                 <p className="text-xs text-muted-foreground mt-1 font-medium">Emotional Memory</p>
               </div>
-              <div className="p-5 rounded-2xl bg-card/90 border border-primary/20 text-center hover:border-primary transition-colors">
-                <p className="text-2xl font-bold text-primary font-heading">Unconscious</p>
+              <div className="p-5 rounded-2xl bg-[#071328]/90 border border-primary/20 text-center hover:border-primary transition-colors">
+                <p className="text-xl font-bold text-primary font-heading">Unconscious</p>
                 <p className="text-xs text-muted-foreground mt-1 font-medium">Deep Root Beliefs</p>
               </div>
-              <div className="p-5 rounded-2xl bg-card/90 border border-primary/20 text-center hover:border-primary transition-colors">
-                <p className="text-2xl font-bold text-primary font-heading">Somatic Body</p>
-                <p className="text-xs text-muted-foreground mt-1 font-medium">Nerve & Spine Imprints</p>
+              <div className="p-5 rounded-2xl bg-[#071328]/90 border border-primary/20 text-center hover:border-primary transition-colors">
+                <p className="text-xl font-bold text-primary font-heading">Somatic Body</p>
+                <p className="text-xs text-muted-foreground mt-1 font-medium">Spine & Energetics</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* "This is for you if" & "This is not for you if" Section */}
+      <section className="relative w-full py-20 bg-[#071328]/70 border-t border-b border-primary/15 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-widest mb-4">
+              Readiness & Fit
+            </div>
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white">
+              Is This Retreat <span className="text-primary">Right For You?</span>
+            </h2>
+            <p className="text-muted-foreground mt-4 text-base sm:text-lg">
+              To guarantee meaningful and lasting transformation, we create an intentional, honest, and supportive container.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            
+            {/* Card 1: This is for you if */}
+            <div className="glass-heavy p-8 sm:p-10 rounded-[2.5rem] border border-primary/30 flex flex-col justify-between shadow-xl">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/15 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+                  <CheckCircle className="w-4 h-4" /> Aligned Candidate
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-6">
+                  This is for you if:
+                </h3>
+                <ul className="space-y-4">
+                  {forYouList.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3.5">
+                      <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+                      </div>
+                      <span className="text-sm sm:text-base text-[#E6F1FF] leading-relaxed font-light">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Card 2: This is not for you if */}
+            <div className="glass p-8 sm:p-10 rounded-[2.5rem] border border-red-500/25 flex flex-col justify-between shadow-xl bg-red-950/10">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/15 text-red-300 text-xs font-bold uppercase tracking-wider mb-6">
+                  <AlertCircle className="w-4 h-4" /> Non-Alignment
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-6">
+                  This is not for you if:
+                </h3>
+                <ul className="space-y-4">
+                  {notForYouList.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3.5">
+                      <div className="w-6 h-6 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center shrink-0 mt-0.5">
+                        <X className="w-3.5 h-3.5 stroke-[2.5]" />
+                      </div>
+                      <span className="text-sm sm:text-base text-[#CCD6F6] leading-relaxed font-light">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-8 pt-4 border-t border-red-500/15 text-xs text-muted-foreground">
+                * We maintain absolute honesty and care so every attendee experiences profound, lasting breakthrough.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Integration & Your Transformation Program Section with Equal Cards & Read More */}
-      <section className="relative w-full py-20 bg-[#071328]/60 border-t border-white/5 z-10">
+      <section className="relative w-full py-20 bg-[#071328]/50 border-b border-white/5 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-widest mb-4">
-              Long-Term Success
+              Integration & Ongoing Support
             </div>
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-white">
-              Integration: <span className="text-primary">3-Month Coaching</span>
+              Integration
             </h2>
-            <p className="text-xl text-primary font-medium mt-2">Deep Inner Path Healing</p>
+            <p className="text-xl text-primary font-medium mt-3">
+              3 months of one-on-one support with Rattanawan once a week.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -477,7 +590,7 @@ export default function RetreatPage() {
                 
                 <div className="space-y-4 text-sm sm:text-base text-[#CCD6F6] leading-relaxed">
                   <p>
-                    After your retreat, you will have 3 months of weekly one-on-one sessions with Rattanawan.
+                    After your retreat, you will have 3 months of one-on-one support with Rattanawan once a week.
                   </p>
                   <p>
                     During these sessions, you will be guided into deep states of relaxation and reflection. In this space, your higher self will operate to help you visualise and process specific memories, traumas, and limiting beliefs that you need to overcome and heal.
@@ -495,7 +608,7 @@ export default function RetreatPage() {
                       className="overflow-hidden space-y-4 pt-4 text-sm sm:text-base text-[#CCD6F6] leading-relaxed border-t border-white/5 mt-4"
                     >
                       <p>
-                        You will be coached while in this trance state, so that you can rewire past pain and no longer relive it. This process allows your higher consciousness to operate and clear obstacles while your mind is at ease and open to change. This is a holistic & personalised healing program that addresses the root causes of imbalance and restores the belief that your body can heal itself.
+                        You will be coached while in this trance state, so that you can rewire past pain and no longer relive it. This process allows your higher consciousness to operate and clear obstacles while your mind is at ease and open to change. This is a holistic &amp; personalised healing program that addresses the root causes of imbalance and restores the belief that your body can heal itself.
                       </p>
                       <p>
                         When the old patterns and belief systems are addressed and worked through, the higher consciousness can lead in your future. This process completes the Deep Inner Path Healing program, so your reasoning mind can fully work for you, for a lifetime of making more aligned choices that allow you to live fully.
@@ -523,7 +636,7 @@ export default function RetreatPage() {
               </div>
             </div>
 
-            {/* Card 2: Weaving Retreat Openings */}
+            {/* Card 2: Deep Dive Neurobehavioral Anchoring */}
             <div className="glass p-7 sm:p-10 rounded-3xl border border-primary/20 flex flex-col justify-between hover:border-primary/50 transition-all duration-300 min-h-[380px]">
               <div>
                 <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-5 flex items-center gap-3">
@@ -533,17 +646,17 @@ export default function RetreatPage() {
                 
                 <div className="space-y-4 text-sm sm:text-base text-[#CCD6F6] leading-relaxed">
                   <p>
-                    Your retreat is where it begins. What follows is three months of weekly one-on-one sessions with Rattanawan — time to take the openings you felt on retreat and weave them into the way you actually live.
+                    Your retreat is where the breakthrough begins. What follows is three months of dedicated one-on-one integration with Rattanawan — time to take the openings you felt on retreat and anchor them into your real-world routines.
                   </p>
                   <p>
-                    Each session guides you into a deep state of relaxation and reflection, where the usual mental noise softens, and you can meet yourself honestly. From that settled, open place, you begin to notice the beliefs and patterns that have quietly run your life — the old stories about what&apos;s possible for you, what you deserve, what feels safe. With Rattanawan&apos;s guidance, you gently loosen their hold.
+                    Each session guides you into a deep state of relaxation and reflection, where the mental chatter softens, and you can meet yourself honestly. From that settled place, limiting beliefs lose their hold, and your authentic truth emerges.
                   </p>
                 </div>
 
                 <AnimatePresence initial={false}>
-                  {expandedIntegration.daily && (
+                  {expandedIntegration.deepDive && (
                     <motion.div
-                      key="integration-daily-content"
+                      key="integration-deepdive-content"
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
@@ -551,10 +664,10 @@ export default function RetreatPage() {
                       className="overflow-hidden space-y-4 pt-4 text-sm sm:text-base text-[#CCD6F6] leading-relaxed border-t border-white/5 mt-4"
                     >
                       <p>
-                        This is personal, unhurried work. Some sessions bring a long-held feeling to the surface; others simply let you see a familiar pattern from a new angle. Rattanawan holds that space and helps you make sense of what arises, so that instead of being pulled by old reactions, you can begin to respond from a clearer, wiser place within you.
+                        This is personal, unhurried work. Some sessions bring a long-held feeling to the surface; others simply let you see a familiar pattern from a new angle. Rattanawan holds that space and helps you make sense of what arises.
                       </p>
                       <p>
-                        Over three months, these shifts compound. Patterns that used to run in the background lose their charge. You reconnect with the steady, knowing part of yourself and let it lead — not just in our sessions, but in the everyday choices that shape your life. You leave not &ldquo;fixed,&rdquo; but more at home in yourself: calmer, clearer, and able to choose in a way that truly aligns with who you&apos;re becoming.
+                        Over three months, these shifts compound into permanent neurobehavioral alignment: relationships and abundance flow more easily, chronic anxiety dissolves, and you live with grounded clarity.
                       </p>
                     </motion.div>
                   )}
@@ -564,10 +677,10 @@ export default function RetreatPage() {
               <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
                 <button
                   type="button"
-                  onClick={() => toggleIntegration("daily")}
+                  onClick={() => toggleIntegration("deepDive")}
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-primary hover:text-white transition-colors cursor-pointer py-1"
                 >
-                  {expandedIntegration.daily ? (
+                  {expandedIntegration.deepDive ? (
                     <>Show Less <ChevronUp className="w-4 h-4" /></>
                   ) : (
                     <>Read More <ChevronDown className="w-4 h-4" /></>
@@ -581,22 +694,19 @@ export default function RetreatPage() {
 
           </div>
 
-          {/* Client Stories / Concrete Results Grid */}
+          {/* Client Stories Section */}
           <div className="mt-16">
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-white text-center mb-8">
-              Client <span className="text-primary">Stories & Results</span>
+              Client <span className="text-primary">stories:</span>
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {clientStories.map((story, idx) => (
-                <div key={idx} className="p-6 rounded-2xl glass border border-primary/20 hover:border-primary transition-all duration-300 flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-5 h-5" />
+                <div key={idx} className="p-5 rounded-2xl glass border border-primary/20 hover:border-primary transition-all duration-300 flex items-center gap-4">
+                  <div className="w-9 h-9 rounded-xl bg-primary/15 text-primary flex items-center justify-center shrink-0">
+                    <Check className="w-5 h-5 stroke-[2.5]" />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-white text-lg mb-1">{story.title}</h4>
-                    <p className="text-sm text-[#CCD6F6]">{story.desc}</p>
-                  </div>
+                  <span className="font-medium text-[#E6F1FF] text-base leading-snug">{story}</span>
                 </div>
               ))}
             </div>
@@ -605,7 +715,7 @@ export default function RetreatPage() {
         </div>
       </section>
 
-      {/* What's Included & Details Section */}
+      {/* What's Included & Luxury Accommodation Section */}
       <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
           
@@ -615,14 +725,14 @@ export default function RetreatPage() {
               All-Inclusive Luxury
             </div>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-8">
-              What&apos;s <span className="text-primary">Included</span>
+              What’s <span className="text-primary">Included:</span>
             </h2>
 
             <ul className="space-y-4">
               {whatIsIncluded.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-4">
                   <div className="w-6 h-6 rounded-full bg-primary/15 text-primary flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-4 h-4" />
+                    <Check className="w-4 h-4 stroke-[2.5]" />
                   </div>
                   <span className="text-sm sm:text-base md:text-lg text-[#E6F1FF] leading-relaxed">{item}</span>
                 </li>
@@ -634,35 +744,46 @@ export default function RetreatPage() {
           <div className="lg:col-span-5 space-y-8 flex flex-col justify-between">
             
             {/* Location Box */}
-            <div className="glass p-7 sm:p-8 rounded-[2rem] border border-primary/20 shadow-xl">
-              <h3 className="text-2xl font-heading font-bold text-white mb-4 flex items-center gap-3">
+            <div className="glass p-7 sm:p-8 rounded-[2rem] border border-primary/20 shadow-xl space-y-4">
+              <h3 className="text-2xl font-heading font-bold text-white flex items-center gap-3">
                 <MapPin className="text-primary w-6 h-6 shrink-0" />
-                Location
+                Location:
               </h3>
               <p className="text-[#CCD6F6] leading-relaxed text-sm sm:text-base">
                 This retreat will be held at a <strong>Beachfront Luxury Hotel in Thailand</strong>. You will have a private room, space to relax and contemplate, and spa services available to help you through this program. The specific venue will be disclosed depending on your attendance date.
               </p>
+              <div className="pt-2 border-t border-white/10 space-y-2 text-xs text-[#CCD6F6]">
+                <div className="flex items-center gap-2">
+                  <Building className="w-4 h-4 text-primary shrink-0" />
+                  <span><strong>Casa de La Flora</strong> — Luxury beachfront private accommodations</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-primary shrink-0" />
+                  <span><strong>La Vita Sana</strong> — Holistic wellness and therapeutic space</span>
+                </div>
+              </div>
             </div>
 
             {/* Investment Box */}
             <div className="glass-heavy p-7 sm:p-8 rounded-[2rem] border-2 border-primary/40 relative overflow-hidden shadow-[0_0_35px_rgba(80,200,198,0.2)]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/15 rounded-full blur-2xl pointer-events-none" />
               <h3 className="text-2xl font-heading font-bold text-white mb-4 flex items-center gap-3">
-                <Award className="text-primary w-6 h-6 shrink-0" />
-                Investment & Payment Plan
+                <CreditCard className="text-primary w-6 h-6 shrink-0" />
+                Investment
               </h3>
               <div className="space-y-3 text-[#CCD6F6] text-sm sm:text-base leading-relaxed">
                 <p>
-                  A deposit of <strong>14.5k pounds</strong> is required to reserve your retreat space.
+                  A deposit of <strong>14.5k pounds</strong> is required to reserve your retreat space; an additional <strong>4k pounds</strong> will be due before the start of the retreat.
                 </p>
                 <p>
-                  An additional <strong>4k pounds</strong> will be due before the start of the retreat.
+                  The remaining balance can be paid in full or on a <strong>3-part payment plan</strong> concluding 3 months after the retreat. A <strong>Wise transfer</strong> can be used to place your deposit.
                 </p>
-                <p>
-                  The remaining balance can be paid in full or on a <strong>3-part payment plan</strong> concluding 3 months after the retreat.
-                </p>
-                <div className="pt-2 text-xs font-semibold text-primary">
-                  * A Wise transfer can be used to place your deposit securely.
+                
+                <div className="pt-3 border-t border-white/10">
+                  <p className="text-xs font-bold text-white uppercase tracking-wider mb-1">Terms &amp; Conditions</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    The retreat investment is non-refundable. You are advised to purchase travel insurance so that you are covered in the unlikely event that the retreat is cancelled due to travel restrictions, inclement weather, etc.
+                  </p>
                 </div>
               </div>
 
@@ -682,29 +803,65 @@ export default function RetreatPage() {
         </div>
       </section>
 
-      {/* About Rattanawan: Credentials, Specialty & My Story with Equal Heights & Read More */}
-      <section className="relative w-full py-20 bg-[#071328]/80 border-t border-white/5 z-10">
+      {/* Sample Daily Schedule Section */}
+      <section className="relative w-full py-20 bg-[#071328]/80 border-t border-b border-primary/15 z-10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-widest mb-4">
+              Retreat Rhythm
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white">
+              Sample Daily <span className="text-primary">Schedule</span>
+            </h2>
+            <p className="text-lg text-primary font-medium mt-2">Sample Day</p>
+          </div>
+
+          <div className="glass p-6 sm:p-10 rounded-[2.5rem] border border-primary/25 shadow-2xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+              {dailySchedule.map((item, idx) => (
+                <div 
+                  key={idx}
+                  className="p-4 sm:p-5 rounded-2xl bg-[#071328]/90 border border-primary/15 hover:border-primary/50 transition-colors flex items-center gap-4 group"
+                >
+                  <div className="px-3 py-1.5 rounded-xl bg-primary/15 text-primary text-xs sm:text-sm font-bold font-mono shrink-0 group-hover:bg-primary group-hover:text-[#020C1B] transition-colors">
+                    {item.time}
+                  </div>
+                  <span className="text-sm sm:text-base font-medium text-[#E6F1FF] group-hover:text-primary transition-colors">
+                    {item.activity}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 text-center text-xs text-muted-foreground border-t border-white/5 pt-4">
+              * Daily timing offers flexibility tailored comfortably to each guest’s energetic tolerance and spa scheduling.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Rattanawan: Credentials, Areas of Speciality & My Story */}
+      <section className="relative w-full py-20 bg-[#071328]/60 border-b border-white/5 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-widest mb-4">
-              Your Guide & Practitioner
+              Your Guide &amp; Practitioner
             </div>
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-white">
-              About <span className="text-primary">Rattanawan James</span>
+              About <span className="text-primary">Rattanawan:</span>
             </h2>
-            <p className="text-base sm:text-lg text-primary font-medium mt-2">
-              Neurobehavioral Wellness Consultant & Holistic Hypnotherapist
+            <p className="text-sm sm:text-base text-primary/90 font-medium mt-2">
+              What are your credentials (SMT, etc.) Areas of speciality.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-16">
             
-            {/* Column 1: Credentials & Approach */}
+            {/* Column 1: Credentials & Speciality */}
             <div className="lg:col-span-6 glass p-7 sm:p-9 rounded-3xl border border-primary/20 flex flex-col justify-between hover:border-primary/50 transition-all duration-300 min-h-[480px]">
               <div>
                 <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-4">
-                  My Credentials & Areas of Specialty
+                  My Credentials &amp; Areas of Speciality
                 </h3>
                 
                 <div className="space-y-4 text-sm sm:text-base text-[#CCD6F6] leading-relaxed">
@@ -712,7 +869,7 @@ export default function RetreatPage() {
                     My work is shaped by many years of personal experience, study, training, and exploration into the human mind, emotional patterns, trauma, limiting beliefs, and unconscious programming.
                   </p>
                   <p>
-                    My journey began from a deeply personal place, and it was happening in Thailand. After experiencing depression, anger, fear, and emotional patterns that I did not initially understand, I spent many years searching for answers. I explored a wide range of personal development and transformational approaches, including Self Mastery Technology (SMT), hypnotherapy, counselling, mindset work, and teachings from leading personal-development educators.
+                    My journey began from a deeply personal place, and it happened in Thailand. After experiencing depression, anger, fear, and emotional patterns that I did not initially understand, I spent many years searching for answers. I explored a wide range of personal development and transformational approaches, including Self Mastery Technology (SMT), hypnotherapy, counselling, mindset work, and teachings from leading personal-development educators.
                   </p>
                 </div>
 
@@ -731,8 +888,9 @@ export default function RetreatPage() {
                       </p>
                       
                       <div className="pt-2">
-                        <h4 className="text-base font-bold text-white mb-3">Key Areas of Specialty:</h4>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm">
+                        <h4 className="text-base font-bold text-white mb-3">Areas of Speciality</h4>
+                        <p className="text-xs text-muted-foreground mb-3">My work focuses particularly on:</p>
+                        <div className="space-y-2 text-xs sm:text-sm">
                           {areasOfSpeciality.map((specialty, i) => (
                             <div key={i} className="flex items-start gap-2 text-[#CCD6F6]">
                               <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
@@ -743,6 +901,9 @@ export default function RetreatPage() {
                       </div>
 
                       <p className="pt-2">
+                        My approach has grown from both what I have personally experienced and what I have studied and practised over many years. I understand what it feels like to search for answers and still feel that something is missing.
+                      </p>
+                      <p>
                         That is why my work is centred on going deeper—not simply changing the way someone thinks on the surface, but exploring where a pattern may have started, what belief is underneath it, what emotional experience may be connected to it, and how a person can begin to understand themselves differently.
                       </p>
                     </motion.div>
@@ -759,7 +920,7 @@ export default function RetreatPage() {
                   {expandedAbout.credentials ? (
                     <>Show Less <ChevronUp className="w-4 h-4" /></>
                   ) : (
-                    <>Read Full Credentials & Specialties <ChevronDown className="w-4 h-4" /></>
+                    <>Read Full Credentials &amp; Specialties <ChevronDown className="w-4 h-4" /></>
                   )}
                 </button>
                 <span className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
@@ -773,7 +934,7 @@ export default function RetreatPage() {
               <div>
                 <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-4 flex items-center gap-3">
                   <Quote className="text-primary w-6 h-6 shrink-0" />
-                  My Story
+                  My story:
                 </h3>
                 
                 <div className="space-y-4 text-sm sm:text-base text-[#CCD6F6] leading-relaxed font-light">
@@ -781,7 +942,7 @@ export default function RetreatPage() {
                     I was born in Thailand to a farm family. My mom worked tirelessly to put food on the table while my dad struggled with alcoholism. The house was often filled with arguments and fear, and as a child, I thought that was normal because that&apos;s all I knew. I carried those emotional patterns into adulthood without realising it. I thought I was just the way I was.
                   </p>
                   <p>
-                    It wasn&apos;t until my late husband gently said, <em>&ldquo;Darling, it&apos;s not normal to stay angry for seven or ten days.&rdquo;</em> And I thought, <em>&ldquo;What are you talking about? I&apos;m fine.&rdquo;</em> Later, when my ex said almost the exact same thing, hearing it from two people who loved me made me pause. It pushed me to wonder: why are they saying the same thing? What am I not seeing?
+                    It wasn&apos;t until my late husband gently said, <em>&ldquo;Darling, it&apos;s not normal to stay angry for seven or ten days.&rdquo;</em> And I thought, <em>&ldquo;What are you talking about? I&apos;m fine.&rdquo;</em> Later, when my ex said almost the exact same thing, hearing it from two people who loved me made me pause. It pushed me to wonder: why are they saying the same thing? What am I not seeing? That&apos;s when I started searching for answers.
                   </p>
                 </div>
 
@@ -796,7 +957,7 @@ export default function RetreatPage() {
                       className="overflow-hidden space-y-4 pt-4 text-sm sm:text-base text-[#CCD6F6] leading-relaxed font-light border-t border-white/5 mt-4"
                     >
                       <p>
-                        That&apos;s when I started searching for answers. I eventually realised I&apos;d been living with depression for years without knowing it. My ex sent me a video about Bob Proctor, and something in that message sparked a curiosity in me. I wanted to understand why I thought and felt the way I did.
+                        I eventually realised I&apos;d been living with depression for years without knowing it. My ex sent me a video about Bob Proctor, and something in that message sparked a curiosity in me. I wanted to understand why I thought and felt the way I did.
                       </p>
                       <p>
                         I went to seminars, read countless books, and learned from teachers like Tony Robbins, Dr Joe Dispenza, and others. I studied mindset, human behaviour, hypnotherapy, and unconscious programming because I wanted to understand why I wasn&apos;t able to heal completely.
@@ -843,10 +1004,10 @@ export default function RetreatPage() {
       <section className="relative w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 z-10">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-widest mb-4">
-            Common Inquiries
+            Common Questions
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white">
-            Frequently Asked <span className="text-primary">Questions</span>
+            FAQ
           </h2>
         </div>
 
@@ -900,7 +1061,7 @@ export default function RetreatPage() {
               Retreat <span className="text-primary">Application</span>
             </h2>
             <p className="text-[#CCD6F6] text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-              Due to the private, high-touch nature of this luxury container, spaces are strictly limited. Please complete the application below for attendance review and discovery call scheduling.
+              Due to the private, high-touch nature of this luxury container, spaces are strictly limited to a maximum of six guests. Please complete the application below for attendance review and discovery call scheduling.
             </p>
           </div>
 
@@ -1001,7 +1162,7 @@ export default function RetreatPage() {
 
               <div>
                 <label className="block text-sm font-semibold mb-2 text-white">
-                  Have you ever tried coaching, healing hypnotherapy, spinal neurosynergy therapy, or past-life regression?
+                  Have you ever tried coaching, healing hypnotherapy, spinal neuro energy flow (SNEF), or past-life regression?
                 </label>
                 <textarea 
                   rows={2} 
@@ -1030,7 +1191,7 @@ export default function RetreatPage() {
                     className="mt-1 w-5 h-5 accent-primary cursor-pointer shrink-0" 
                   />
                   <label htmlFor="spinal" className="text-xs sm:text-sm text-[#CCD6F6] cursor-pointer leading-relaxed">
-                    I confirm that I am NOT currently experiencing any spinal or cranial injuries (as this may prevent participation in physical SNST sessions). *
+                    I confirm that I am NOT currently experiencing any spinal or cranial injuries (as this may prevent participation in physical Spinal Neuro Energy Flow sessions). *
                   </label>
                 </div>
 

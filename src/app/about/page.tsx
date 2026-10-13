@@ -1,16 +1,16 @@
 import { Metadata } from "next";
-import { ShieldCheck, TrendingUp, Sparkles, Quote } from "lucide-react";
+import { ShieldCheck, TrendingUp, Sparkles, Quote, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Me | Rattanawan James | Holistic Hypnotherapist & Wellness Coach",
-  description: "Learn more about Rattanawan James, certified holistic hypnotherapist, neurobehavioral wellness consultant, and practitioner dedicated to deep inner path healing.",
+  title: "About Rattanawan | Credentials, Specialities & My Story",
+  description: "Learn about Rattanawan James, Neurobehavioral Wellness Consultant & Holistic Hypnotherapist. Explore credentials, areas of speciality, and personal journey.",
 };
 
 export default function AboutPage() {
   const specialties = [
     "Unconscious limiting beliefs and deeply rooted thought patterns",
-    "Emotional and behavioural patterns developed through life experiences",
+    "Emotional and behavioural patterns that may have developed through life experiences",
     "Trauma awareness and emotional healing",
     "Hypnotherapy and deep relaxation",
     "Unconscious-mind exploration and reprogramming",
@@ -18,7 +18,7 @@ export default function AboutPage() {
     "Inherited and family patterns",
     "Emotional independence and confidence",
     "Helping people connect with and express their own truth",
-    "Breaking repetitive patterns of fear, anger, self-doubt, and reactivity"
+    "Breaking repetitive patterns of fear, anger, self-doubt, and emotional reactivity"
   ];
 
   return (
@@ -37,10 +37,10 @@ export default function AboutPage() {
             The Practitioner
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-tight">
-            About <span className="text-transparent bg-clip-text text-gradient">Rattanawan James</span>
+            About <span className="text-transparent bg-clip-text text-gradient">Rattanawan</span>
           </h1>
           <p className="text-xl md:text-2xl text-primary font-medium max-w-3xl mx-auto leading-relaxed">
-            Neurobehavioral Wellness Consultant & Holistic Hypnotherapist
+            Neurobehavioral Wellness Consultant &amp; Holistic Hypnotherapist
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export default function AboutPage() {
                 <ul className="space-y-4 text-[#CCD6F6] text-sm">
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#50C8C6] shrink-0" />
-                    Self-Love Awakening Hypnotherapy
+                    Self-Love Awakening Retreat
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#50C8C6] shrink-0" />
@@ -76,7 +76,7 @@ export default function AboutPage() {
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#50C8C6] shrink-0" />
-                    Spinal Synergy & Trauma Release
+                    Spinal Neuro Energy Flow (SNEF)
                   </li>
                 </ul>
               </div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
             <div className="glass p-3 rounded-[2rem] border border-primary/25 overflow-hidden">
               <img 
                 src="/images/banner1.png" 
-                alt="Self-Love Awakening Hypnotherapy" 
+                alt="Self-Love Awakening Retreat" 
                 className="w-full h-auto rounded-2xl object-cover"
               />
             </div>
@@ -126,7 +126,7 @@ export default function AboutPage() {
             {/* Credentials & Approach */}
             <div className="glass p-8 md:p-12 rounded-[2rem] border border-primary/25 shadow-2xl relative overflow-hidden">
               <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-6">
-                My Credentials & Areas of Specialty
+                My Credentials &amp; Areas of Speciality
               </h2>
               
               <div className="space-y-4 text-base sm:text-lg text-[#CCD6F6] leading-relaxed font-light">
@@ -134,7 +134,7 @@ export default function AboutPage() {
                   My work is shaped by many years of personal experience, study, training, and exploration into the human mind, emotional patterns, trauma, limiting beliefs, and unconscious programming.
                 </p>
                 <p>
-                  My journey began from a deeply personal place, and it was happening in Thailand. After experiencing depression, anger, fear, and emotional patterns that I did not initially understand, I spent many years searching for answers. I explored a wide range of personal development and transformational approaches, including Self Mastery Technology (SMT), hypnotherapy, counselling, mindset work, and teachings from leading personal-development educators.
+                  My journey began from a deeply personal place, and it happened in Thailand. After experiencing depression, anger, fear, and emotional patterns that I did not initially understand, I spent many years searching for answers. I explored a wide range of personal development and transformational approaches, including Self Mastery Technology (SMT), hypnotherapy, counselling, mindset work, and teachings from leading personal-development educators.
                 </p>
                 <p>
                   Rather than following one approach alone, I began bringing together the knowledge and insights I gained from these different areas. Through my own experience, I became particularly interested in understanding what sits beneath the conscious mind—the beliefs, emotional responses, memories, and patterns that can influence how we experience ourselves and the world around us.
@@ -142,9 +142,10 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-white/10">
-                <h3 className="text-xl font-heading font-bold text-white mb-4">
-                  My Work Focuses Particularly On:
+                <h3 className="text-xl font-heading font-bold text-white mb-2">
+                  Areas of Speciality
                 </h3>
+                <p className="text-sm text-muted-foreground mb-4">My work focuses particularly on:</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-[#CCD6F6]">
                   {specialties.map((item, idx) => (
                     <div key={idx} className="flex items-start gap-2.5">
@@ -155,16 +156,21 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <p className="mt-8 text-base text-[#CCD6F6] leading-relaxed border-t border-white/10 pt-6">
-                That is why my work is centred on going deeper—not simply changing the way someone thinks on the surface, but exploring where a pattern may have started, what belief is underneath it, what emotional experience may be connected to it, and how a person can begin to understand themselves differently.
-              </p>
+              <div className="mt-8 text-base text-[#CCD6F6] leading-relaxed border-t border-white/10 pt-6 space-y-3 font-light">
+                <p>
+                  My approach has grown from both what I have personally experienced and what I have studied and practised over many years. I understand what it feels like to search for answers and still feel that something is missing.
+                </p>
+                <p>
+                  That is why my work is centred on going deeper—not simply changing the way someone thinks on the surface, but exploring where a pattern may have started, what belief is underneath it, what emotional experience may be connected to it, and how a person can begin to understand themselves differently.
+                </p>
+              </div>
             </div>
 
             {/* My Story */}
             <div className="glass p-8 md:p-12 rounded-[2rem] border border-primary/25 shadow-2xl relative overflow-hidden">
               <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-6 flex items-center gap-3">
                 <Quote className="text-primary w-7 h-7 shrink-0" />
-                My Story
+                My story:
               </h2>
 
               <div className="space-y-4 text-base sm:text-lg text-[#CCD6F6] leading-relaxed font-light">
@@ -188,14 +194,15 @@ export default function AboutPage() {
               <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-4 items-center justify-between">
                 <div>
                   <h4 className="text-lg font-bold text-white">Ready for Deep Transformation?</h4>
-                  <p className="text-sm text-muted-foreground">Explore private sessions or the 12-day retreat.</p>
+                  <p className="text-sm text-muted-foreground">Explore private sessions or the 12-day luxury retreat.</p>
                 </div>
                 <div className="flex gap-3 w-full sm:w-auto">
                   <Link
                     href="/retreat"
-                    className="btn-shine px-6 py-3 rounded-full bg-primary text-[#020C1B] font-bold text-sm text-center hover:shadow-[0_0_20px_rgba(80,200,198,0.4)] transition-all"
+                    className="btn-shine px-6 py-3 rounded-full bg-primary text-[#020C1B] font-bold text-sm text-center hover:shadow-[0_0_20px_rgba(80,200,198,0.4)] transition-all flex items-center justify-center gap-2"
                   >
                     View Retreat
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/#contact"
