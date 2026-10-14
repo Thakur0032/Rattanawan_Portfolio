@@ -28,6 +28,39 @@ import Link from "next/link";
 export default function RetreatPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmittingApp, setIsSubmittingApp] = useState(false);
+
+  const handleAppSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmittingApp(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload: Record<string, string> = {
+      _subject: `New Retreat Application: ${formData.get("fullName") || "Candidate"} - Self-Love Awakening`,
+      _template: "table",
+      _captcha: "false"
+    };
+    formData.forEach((value, key) => {
+      payload[key] = value.toString();
+    });
+
+    try {
+      await fetch("https://formsubmit.co/ajax/rattanawanhypnotherapy@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Retreat application submission error:", err);
+      setSubmitted(true);
+    } finally {
+      setIsSubmittingApp(false);
+    }
+  };
 
   // Read more states for equal card heights
   const [expandedHighlights, setExpandedHighlights] = useState<{ [key: string]: boolean }>({
@@ -1075,10 +1108,7 @@ export default function RetreatPage() {
             </div>
           ) : (
             <form 
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
+              onSubmit={handleAppSubmit}
               className="space-y-6"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1087,6 +1117,7 @@ export default function RetreatPage() {
                   <input 
                     required 
                     type="text" 
+                    name="fullName"
                     className="w-full bg-[#071328]/90 border border-white/15 rounded-xl p-4 text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm sm:text-base" 
                     placeholder="Your Name" 
                   />
@@ -1096,6 +1127,7 @@ export default function RetreatPage() {
                   <input 
                     required 
                     type="email" 
+                    name="email"
                     className="w-full bg-[#071328]/90 border border-white/15 rounded-xl p-4 text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm sm:text-base" 
                     placeholder="you@example.com" 
                   />
@@ -1108,6 +1140,7 @@ export default function RetreatPage() {
                 </label>
                 <textarea 
                   required 
+                  name="whyInterested"
                   rows={3} 
                   className="w-full bg-[#071328]/90 border border-white/15 rounded-xl p-4 text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm sm:text-base" 
                   placeholder="Share what drew you to this experience..." 
@@ -1120,6 +1153,7 @@ export default function RetreatPage() {
                 </label>
                 <textarea 
                   required 
+                  name="holdingBack"
                   rows={3} 
                   className="w-full bg-[#071328]/90 border border-white/15 rounded-xl p-4 text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm sm:text-base" 
                   placeholder="Emotional patterns, self-doubt, chronic stress, relationships..." 
@@ -1132,6 +1166,7 @@ export default function RetreatPage() {
                 </label>
                 <textarea 
                   required 
+                  name="retreatGoal"
                   rows={3} 
                   className="w-full bg-[#071328]/90 border border-white/15 rounded-xl p-4 text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm sm:text-base" 
                   placeholder="Your primary intention and transformation goal..." 
@@ -1144,6 +1179,7 @@ export default function RetreatPage() {
                 </label>
                 <textarea 
                   rows={2} 
+                  name="lifeChallenges"
                   className="w-full bg-[#071328]/90 border border-white/15 rounded-xl p-4 text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm sm:text-base" 
                   placeholder="Describe your current challenges..." 
                 />
@@ -1155,6 +1191,7 @@ export default function RetreatPage() {
                 </label>
                 <textarea 
                   rows={2} 
+                  name="whatTried"
                   className="w-full bg-[#071328]/90 border border-white/15 rounded-xl p-4 text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm sm:text-base" 
                   placeholder="Therapy, books, retreats, other modalities..." 
                 />
@@ -1166,6 +1203,7 @@ export default function RetreatPage() {
                 </label>
                 <textarea 
                   rows={2} 
+                  name="priorExperience"
                   className="w-full bg-[#071328]/90 border border-white/15 rounded-xl p-4 text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm sm:text-base" 
                   placeholder="Yes / No (detail your prior experiences)" 
                 />
@@ -1177,6 +1215,7 @@ export default function RetreatPage() {
                 </label>
                 <input 
                   type="text" 
+                  name="medicalAilments"
                   className="w-full bg-[#071328]/90 border border-white/15 rounded-xl p-4 text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm sm:text-base" 
                   placeholder="List any ongoing ailments or 'None'" 
                 />
@@ -1188,6 +1227,7 @@ export default function RetreatPage() {
                     required 
                     type="checkbox" 
                     id="spinal" 
+                    name="confirmNoSpinalInjury"
                     className="mt-1 w-5 h-5 accent-primary cursor-pointer shrink-0" 
                   />
                   <label htmlFor="spinal" className="text-xs sm:text-sm text-[#CCD6F6] cursor-pointer leading-relaxed">
@@ -1200,6 +1240,7 @@ export default function RetreatPage() {
                     required 
                     type="checkbox" 
                     id="medical" 
+                    name="confirmDoctorApproval"
                     className="mt-1 w-5 h-5 accent-primary cursor-pointer shrink-0" 
                   />
                   <label htmlFor="medical" className="text-xs sm:text-sm text-[#CCD6F6] cursor-pointer leading-relaxed">
@@ -1212,6 +1253,7 @@ export default function RetreatPage() {
                     required 
                     type="checkbox" 
                     id="travel" 
+                    name="confirmTravelAvailability"
                     className="mt-1 w-5 h-5 accent-primary cursor-pointer shrink-0" 
                   />
                   <label htmlFor="travel" className="text-xs sm:text-sm text-[#CCD6F6] cursor-pointer leading-relaxed">
@@ -1222,10 +1264,11 @@ export default function RetreatPage() {
 
               <button 
                 type="submit" 
-                className="btn-shine w-full inline-flex items-center justify-center gap-3 bg-primary text-[#020C1B] font-bold text-base sm:text-lg py-5 rounded-2xl hover:shadow-[0_0_35px_rgba(80,200,198,0.55)] transition-all duration-300 mt-6 cursor-pointer"
+                disabled={isSubmittingApp}
+                className="btn-shine w-full inline-flex items-center justify-center gap-3 bg-primary text-[#020C1B] font-bold text-base sm:text-lg py-5 rounded-2xl hover:shadow-[0_0_35px_rgba(80,200,198,0.55)] transition-all duration-300 mt-6 cursor-pointer disabled:opacity-70"
               >
                 <Send className="w-5 h-5" />
-                Submit Application For Consideration
+                {isSubmittingApp ? "Sending Application to Rattanawan..." : "Submit Application For Consideration"}
               </button>
             </form>
           )}

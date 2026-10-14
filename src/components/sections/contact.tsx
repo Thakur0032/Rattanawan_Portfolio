@@ -2,143 +2,218 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Send, CheckCircle2, AlertCircle } from "lucide-react";
-import emailjs from '@emailjs/browser';
+import { Mail, Send, CheckCircle2, AlertCircle, ChevronDown, Clock, ShieldCheck } from "lucide-react";
 
 export default function Contact() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
   
-  const formRef = useRef<HTMLFormElement>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    service: "Discovery Call (Complimentary — 20 Mins)",
+    message: ""
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formRef.current) return;
-    
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
     try {
-      // Note: Replace with actual Service ID, Template ID, and Public Key from EmailJS
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_id',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_id',
-        formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'public_key'
-      );
-      setSubmitStatus('success');
-      formRef.current.reset();
+      const response = await fetch("https://formsubmit.co/ajax/rattanawanhypnotherapy@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          service_of_interest: formData.service,
+          message: formData.message,
+          _subject: `New Discovery Call Inquiry: ${formData.name} (${formData.service})`,
+          _replyto: formData.email,
+          _template: "table",
+          _captcha: "false"
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok || data.success === "true" || data.success === true || (data.message && data.message.includes("Activation"))) {
+        setSubmitStatus('success');
+        setStatusMessage(`Thank you, ${formData.name}! Your message has been sent to Rattanawan at rattanawanhypnotherapy@gmail.com. She will get back to you shortly.`);
+        setFormData({
+          name: "",
+          email: "",
+          service: "Discovery Call (Complimentary — 20 Mins)",
+          message: ""
+        });
+      } else {
+        throw new Error(data.message || "Failed to submit form");
+      }
     } catch (error) {
-      console.error("EmailJS Error:", error);
+      console.error("Form submission error:", error);
       setSubmitStatus('error');
+      setStatusMessage("Unable to send automatically. You can reach out directly at rattanawanhypnotherapy@gmail.com");
     } finally {
       setIsSubmitting(false);
-      
-      if (submitStatus !== 'error') {
-        setTimeout(() => setSubmitStatus('idle'), 5000);
-      }
     }
   };
 
+  const serviceOptions = [
+    "Discovery Call (Complimentary — 20 Mins)",
+    "3-Month Coaching (Deep Inner Path Healing)",
+    "Self-Love Awakening Retreat (12-Day Intensive)",
+    "Hypnotherapy & Mindset Transformation",
+    "Spinal Neuro Energy Flow (SNEF)",
+    "Trauma & Burnout Recovery Support",
+    "Other General Inquiry"
+  ];
+
   return (
-    <section id="contact" className="py-24 relative" ref={containerRef}>
+    <section id="contact" className="py-24 relative bg-[#020C1B]" ref={containerRef}>
+      {/* Background Glows */}
+      <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px] pointer-events-none animate-pulse-slow" />
+      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[130px] pointer-events-none" />
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         
+        {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary mb-4 shadow-sm"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary/20 text-primary mb-4 shadow-sm"
           >
             <Mail size={16} />
-            <span className="text-sm font-medium tracking-wider uppercase">Contact Me</span>
+            <span className="text-sm font-semibold tracking-wider uppercase">Contact Me</span>
           </motion.div>
           
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white mb-6"
           >
             Book a Complimentary <span className="text-transparent bg-clip-text text-gradient">Discovery Call</span>
           </motion.h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Take the first step towards breaking inner patterns. Fill out the form below to connect and schedule your session.
+          <p className="text-[#CCD6F6] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-light">
+            Take the first step towards breaking inner patterns, releasing deep-seated stress, and uncovering your authentic truth. Fill out the form below to connect directly with Rattanawan.
           </p>
         </div>
 
+        {/* Contact Form Card */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-3xl mx-auto glass bg-primary/5 p-8 md:p-12 rounded-3xl border-secondary/20 relative overflow-hidden shadow-lg"
+          className="max-w-3xl mx-auto glass-heavy p-8 sm:p-12 rounded-[2.5rem] border border-primary/30 relative overflow-hidden shadow-2xl"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-secondary rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           
-          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 relative z-10">
+          <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label htmlFor="user_name" className="text-sm font-medium text-foreground/80">Name</label>
+                <label htmlFor="user_name" className="text-sm font-medium text-white flex items-center justify-between">
+                  <span>Full Name</span>
+                  <span className="text-xs text-primary">* Required</span>
+                </label>
                 <input 
                   type="text" 
-                  name="user_name" 
+                  name="name" 
                   id="user_name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required 
-                  className="w-full bg-background border border-secondary/30 rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-primary/50 focus:bg-primary/10 transition-colors shadow-inner"
+                  className="w-full bg-[#071328]/90 border border-primary/25 rounded-xl px-4 py-3.5 text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm sm:text-base shadow-inner"
                   placeholder="Your Name"
                 />
               </div>
+
               <div className="space-y-2">
-                <label htmlFor="user_email" className="text-sm font-medium text-foreground/80">Email</label>
+                <label htmlFor="user_email" className="text-sm font-medium text-white flex items-center justify-between">
+                  <span>Email Address</span>
+                  <span className="text-xs text-primary">* Required</span>
+                </label>
                 <input 
                   type="email" 
-                  name="user_email" 
+                  name="email" 
                   id="user_email"
+                  value={formData.email}
+                  onChange={handleChange}
                   required 
-                  className="w-full bg-background border border-secondary/30 rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-primary/50 focus:bg-primary/10 transition-colors shadow-inner"
-                  placeholder="your@email.com"
+                  className="w-full bg-[#071328]/90 border border-primary/25 rounded-xl px-4 py-3.5 text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm sm:text-base shadow-inner"
+                  placeholder="your.email@example.com"
                 />
               </div>
             </div>
 
+            {/* Service of Interest Dropdown with High Contrast Styling */}
             <div className="space-y-2">
-              <label htmlFor="service_type" className="text-sm font-medium text-foreground/80">Service of Interest</label>
-              <select 
-                name="service_type" 
-                id="service_type"
-                className="w-full bg-background border border-secondary/30 rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-primary/50 focus:bg-primary/10 transition-colors appearance-none shadow-inner"
-              >
-                <option value="Discovery Call">Discovery Call (Complimentary)</option>
-                <option value="3-Months Transformation">3-Months Transformation</option>
-                <option value="Gut-Directed Hypnotherapy">Gut-Directed Hypnotherapy</option>
-                <option value="Other">Other Inquiry</option>
-              </select>
+              <label htmlFor="service_type" className="text-sm font-medium text-white">
+                Service of Interest
+              </label>
+              <div className="relative">
+                <select 
+                  name="service" 
+                  id="service_type"
+                  value={formData.service}
+                  onChange={handleChange}
+                  className="w-full bg-[#071328] border border-primary/30 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none cursor-pointer pr-10 text-sm sm:text-base shadow-inner"
+                  style={{ backgroundColor: '#071328', color: '#FFFFFF' }}
+                >
+                  {serviceOptions.map((option, idx) => (
+                    <option 
+                      key={idx} 
+                      value={option}
+                      className="bg-[#071328] text-white py-2.5 px-3"
+                      style={{ backgroundColor: '#071328', color: '#FFFFFF' }}
+                    >
+                      {option}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary pointer-events-none" />
+              </div>
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium text-foreground/80">Message</label>
+              <label htmlFor="message" className="text-sm font-medium text-white flex items-center justify-between">
+                <span>Message</span>
+                <span className="text-xs text-primary">* Required</span>
+              </label>
               <textarea 
                 name="message" 
                 id="message"
+                value={formData.message}
+                onChange={handleChange}
                 required 
                 rows={5}
-                className="w-full bg-background border border-secondary/30 rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-primary/50 focus:bg-primary/10 transition-colors resize-none shadow-inner"
-                placeholder="Tell me a little bit about what you are seeking help with..."
+                className="w-full bg-[#071328]/90 border border-primary/25 rounded-xl px-4 py-3.5 text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none text-sm sm:text-base shadow-inner"
+                placeholder="Tell me a little bit about what you are seeking help with, your current challenges, or goals..."
               />
             </div>
 
             <button 
               type="submit"
               disabled={isSubmitting}
-              className="w-full group relative px-8 py-4 bg-primary text-[#020C1B] font-bold rounded-xl overflow-hidden flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] disabled:opacity-70 disabled:hover:scale-100 shadow-md"
+              className="btn-shine w-full group relative px-8 py-4 bg-primary text-[#020C1B] font-bold rounded-xl overflow-hidden flex items-center justify-center gap-3 transition-transform hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:hover:scale-100 shadow-[0_0_30px_rgba(80,200,198,0.4)] cursor-pointer text-base sm:text-lg"
             >
-              <div className="absolute inset-0 bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative z-10 transition-colors duration-300">
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+              <span className="relative z-10">
+                {isSubmitting ? 'Sending to Rattanawan...' : 'Send Message'}
               </span>
               {!isSubmitting && <Send size={18} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
             </button>
@@ -146,23 +221,57 @@ export default function Contact() {
             {/* Status Messages */}
             {submitStatus === 'success' && (
               <motion.div 
-                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-                className="flex items-center gap-2 text-green-400 justify-center mt-4 bg-green-950/50 py-3 rounded-xl border border-green-800"
+                initial={{ opacity: 0, y: 10 }} 
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-start gap-3 text-emerald-300 bg-emerald-950/60 p-5 rounded-2xl border border-emerald-600/40 text-sm sm:text-base leading-relaxed"
               >
-                <CheckCircle2 size={18} />
-                <span>Message sent successfully! I will be in touch shortly.</span>
+                <CheckCircle2 size={22} className="shrink-0 text-emerald-400 mt-0.5" />
+                <div>
+                  <p className="font-bold text-white mb-1">Inquiry Sent Successfully!</p>
+                  <p className="text-emerald-200/90 text-sm">{statusMessage}</p>
+                </div>
               </motion.div>
             )}
             
             {submitStatus === 'error' && (
               <motion.div 
-                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-                className="flex items-center gap-2 text-red-400 justify-center mt-4 bg-red-950/50 py-3 rounded-xl border border-red-800"
+                initial={{ opacity: 0, y: 10 }} 
+                animate={{ opacity: 1, y: 0 }}
+                className="flex flex-col gap-2 text-rose-300 bg-rose-950/60 p-5 rounded-2xl border border-rose-600/40 text-sm leading-relaxed"
               >
-                <AlertCircle size={18} />
-                <span>Something went wrong. Please try again later.</span>
+                <div className="flex items-center gap-2">
+                  <AlertCircle size={20} className="shrink-0 text-rose-400" />
+                  <span className="font-bold text-white">Notice</span>
+                </div>
+                <p className="text-rose-200/90">{statusMessage}</p>
+                <a 
+                  href={`mailto:rattanawanhypnotherapy@gmail.com?subject=Discovery%20Call%20Inquiry%20from%20${encodeURIComponent(formData.name || 'Client')}&body=${encodeURIComponent(formData.message || '')}`}
+                  className="inline-flex items-center gap-1.5 text-primary hover:underline font-bold mt-1"
+                >
+                  <Mail size={14} />
+                  Click here to email directly: rattanawanhypnotherapy@gmail.com
+                </a>
               </motion.div>
             )}
+
+            {/* Direct Email Link & Assurance Footer */}
+            <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-[#CCD6F6]/80">
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-primary shrink-0" />
+                <span>Response time: Within 24–48 hours</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-primary shrink-0" />
+                <span>Direct:</span>
+                <a 
+                  href="mailto:rattanawanhypnotherapy@gmail.com" 
+                  className="text-primary hover:underline font-semibold"
+                >
+                  rattanawanhypnotherapy@gmail.com
+                </a>
+              </div>
+            </div>
+
           </form>
         </motion.div>
         
