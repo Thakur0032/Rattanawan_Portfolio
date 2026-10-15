@@ -38,13 +38,19 @@ export default function CustomCursor() {
       setIsVisible(false);
     };
 
+    const handleTouchStart = () => {
+      setIsVisible(false);
+    };
+
     window.addEventListener("mousemove", updateMousePosition);
     window.addEventListener("mouseover", handleMouseOver);
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
     document.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
       window.removeEventListener("mouseover", handleMouseOver);
+      window.removeEventListener("touchstart", handleTouchStart);
       document.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);

@@ -41,7 +41,7 @@ export default function Hero() {
             </h1>
             
             <h2 className="text-2xl md:text-3xl font-medium text-foreground/80 mb-8 max-w-2xl">
-              Rattanawan James — Executive Wellness & Holistic Hypnotherapist
+              Rattanawan Hypnotherapy — Executive Wellness & Holistic Hypnotherapist
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-2xl mb-10 leading-relaxed font-sans">

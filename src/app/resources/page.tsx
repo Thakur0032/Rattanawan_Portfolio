@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Holistic Wellness Resources | Rattanawan James",
+  title: "Holistic Wellness Resources | Rattanawan Hypnotherapy",
   description: "Access free wellness downloads, self-care guides, and holistic wellness education to support your healing journey.",
 };
 

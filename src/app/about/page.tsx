@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About Rattanawan | Credentials, Specialities & My Story",
-  description: "Learn about Rattanawan James, Neurobehavioral Wellness Consultant & Holistic Hypnotherapist. Explore credentials, areas of speciality, and personal journey.",
+  description: "Learn about Rattanawan Hypnotherapy, Neurobehavioral Wellness Consultant & Holistic Hypnotherapist. Explore credentials, areas of speciality, and personal journey.",
 };
 
 export default function AboutPage() {

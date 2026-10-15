@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Hypnotherapy Services | Rattanawan James",
+  title: "Hypnotherapy Services | Rattanawan Hypnotherapy",
   description: "Experience holistic and clinical hypnotherapy. Guided hypnosis for stress relief, anxiety support, sleep improvement, and mindset transformation.",
 };
 

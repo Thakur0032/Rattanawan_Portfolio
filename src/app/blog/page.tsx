@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Holistic Healing Blog | Rattanawan James",
+  title: "Holistic Healing Blog | Rattanawan Hypnotherapy",
   description: "Read the latest wellness inspiration, stress relief tips, and mind-body healing articles on our holistic healing blog.",
 };
 

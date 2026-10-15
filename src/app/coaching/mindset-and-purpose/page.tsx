@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mindset & Life Purpose Coaching | Rattanawan James",
+  title: "Mindset & Life Purpose Coaching | Rattanawan Hypnotherapy",
   description: "Transform your mindset, build confidence, and discover your life purpose with specialized one-on-one coaching for personal and professional growth.",
 };
 

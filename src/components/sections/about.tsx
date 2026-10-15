@@ -58,14 +58,14 @@ export default function About() {
                 <div className="w-full max-w-sm rounded-2xl overflow-hidden bg-card p-2 border border-accent shadow-[0_4px_20px_rgb(0,0,0,0.05)]">
                   <img 
                     src="/images/banner1.png"
-                    alt="Rattanawan James" 
+                    alt="Rattanawan Hypnotherapy" 
                     className="w-full h-auto object-contain rounded-xl transition-transform duration-1000 hover:scale-[1.02]"
                   />
                 </div>
               </div>
               <div className="md:w-2/3 space-y-4 text-muted-foreground relative z-10 leading-relaxed text-[1.05rem]">
                 <p>
-                  I am Rattanawan James, an Executive Wellness Coach and Holistic Hypnotherapist. I help high-performers, founders, and leaders break their inner patterns, releasing deep-seated anxiety and uncovering their true potential.
+                  I am Rattanawan, founder of Rattanawan Hypnotherapy, an Executive Wellness Coach and Holistic Hypnotherapist. I help high-performers, founders, and leaders break their inner patterns, releasing deep-seated anxiety and uncovering their true potential.
                 </p>
                 <p>
                   A calm nervous system leads to a clear, unstoppable mind. My methodology is safe, natural, and highly effective—allowing you to reprogram limiting beliefs at the subconscious level. Whether you are seeking world-class online sessions from the USA, UK, UAE, or AUS, I am here to guide you toward profound clarity.

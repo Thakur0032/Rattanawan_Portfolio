@@ -19,10 +19,10 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
               <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center border border-primary/40 bg-card shadow-[0_0_15px_rgba(80,200,198,0.2)] group-hover:scale-105 transition-transform shrink-0">
-                <img src="/images/logo.png" alt="Rattanawan James Logo" className="w-full h-full object-contain p-1" />
+                <img src="/images/logo.png" alt="Rattanawan Hypnotherapy Logo" className="w-full h-full object-contain p-1" />
               </div>
               <span className="font-heading text-2xl font-bold tracking-tighter text-foreground group-hover:text-primary transition-colors">
-                Rattanawan James<span className="text-primary">.</span>
+                Rattanawan Hypnotherapy<span className="text-primary">.</span>
               </span>
             </Link>
             <p className="text-muted-foreground max-w-sm mb-6">
@@ -68,7 +68,7 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-secondary/20">
           <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Rattanawan James. All rights reserved.
+            &copy; {new Date().getFullYear()} Rattanawan Hypnotherapy. All rights reserved.
           </p>
           
           <button 

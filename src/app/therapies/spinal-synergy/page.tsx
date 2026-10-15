@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Spinal Synergy & Energy Healing | Rattanawan James",
+  title: "Spinal Synergy & Energy Healing | Rattanawan Hypnotherapy",
   description: "Experience Spinal Synergy. Gentle spinal alignment, posture improvement, and holistic spinal care to release blocked energy and restore mind body alignment.",
 };
 

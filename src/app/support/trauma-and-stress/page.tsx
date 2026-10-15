@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Trauma Support & Stress Relief | Rattanawan James",
+  title: "Trauma Support & Stress Relief | Rattanawan Hypnotherapy",
   description: "Supporting emotional well-being and resilience during difficult times. Holistic trauma support, burnout recovery, and stress management for inner peace.",
 };
 

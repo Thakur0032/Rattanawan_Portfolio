@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Sparkles, Brain, Heart, Compass, ShieldCheck, ArrowRight, Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "3-Month Coaching – Deep Inner Path Healing | Rattanawan James",
-  description: "Experience the 3-Month Coaching Deep Inner Path Healing Program with Rattanawan James. Transformational one-on-one healing for burnout recovery, emotional balance, and purpose.",
+  title: "3-Month Coaching – Deep Inner Path Healing | Rattanawan Hypnotherapy",
+  description: "Experience the 3-Month Coaching Deep Inner Path Healing Program with Rattanawan Hypnotherapy. Transformational one-on-one healing for burnout recovery, emotional balance, and purpose.",
 };
 
 export default function ThreeMonthsProgramPage() {

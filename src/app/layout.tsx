@@ -18,11 +18,12 @@ import Footer from "@/components/ui/footer";
 import CustomCursor from "@/components/ui/custom-cursor";
 import AnimatedBackground from "@/components/ui/animated-background";
 import LoadingScreen from "@/components/ui/loading-screen";
+import WhatsAppButton from "@/components/ui/whatsapp-button";
 
 export const metadata: Metadata = {
-  title: "Rattanawan James | Self-Love Awakening Hypnotherapist",
+  title: "Rattanawan Hypnotherapy | Self-Love Awakening Hypnotherapist",
   description: "Break Inner Patterns, Heal & Transform Online. Gut-Directed Hypnotherapy, NLP Master & Self-mastery Hypnosis Specialist.",
-  keywords: ["Hypnotherapy", "Self-Love", "Gut-Directed Hypnotherapy", "Rattanawan James", "Anxiety Relief", "Mental Wellness"],
+  keywords: ["Hypnotherapy", "Self-Love", "Gut-Directed Hypnotherapy", "Rattanawan Hypnotherapy", "Anxiety Relief", "Mental Wellness"],
 };
 
 export default function RootLayout({
@@ -41,6 +42,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
+          <WhatsAppButton />
         </LenisProvider>
       </body>
     </html>
